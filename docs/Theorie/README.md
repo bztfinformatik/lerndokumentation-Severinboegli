@@ -76,3 +76,6 @@ public void setPoints(int points) {
 ```
 
 Mit Setter kann eine Parameter kontrolliert verändert werden. Dies macht Sinn, damit einem Parameter nur sinnvolle Werte zugewiesen werden können.
+
+## Zugriffsmodifikatoren
+
