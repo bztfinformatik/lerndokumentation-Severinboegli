@@ -9,6 +9,11 @@ public class Point {
         setY(y);
     }
 
+    public Point() {
+        this.x = 0;
+        this.y = 0;
+    }
+
     public void setX(double x) {
         this.x = validate(x);
     }
@@ -33,7 +38,7 @@ public class Point {
         return this.getX() == point.getX() && this.getY() == point.getY();
     }
 
-    public double validate(double value){
+    private double validate(double value){
         if (value <= 100 && value >= -100) {
             return value;
         } else {

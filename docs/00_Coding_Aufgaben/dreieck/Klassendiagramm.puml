@@ -1,0 +1,50 @@
+@startuml
+
+class Point {
+    - x : double
+    - y : double
+
+    --
+
+    + Point(double x, double y) : void
+    + Point() : void
+    + setX(double x) : void
+    + setY(double y) : void
+    + getX() : double
+    + getY() : double
+    + getCordinates() : double[]
+    + equals(Point point) : boolean
+    - validate(double value) : double
+}
+
+class Dreieck {
+    - points : Point[]
+
+    --
+
+    + Dreieck(Point a, Point b, Point c) : void
+    + setPoints(Point a, Point b, Point c, Point d) : void
+    + getPoints() : Point[]
+    + getPointsToString() : String
+    - validateTriangle(Point a, Point b, Point c) : boolean
+    - linearFunction(Point firstPoint, Point secondPoint) : double[]
+    - calcFunction(double value, double m, double q) : double
+    
+}
+
+class Viereck {
+    - points : Point[]
+
+    --
+
+    + Viereck(Point a, Point b, Point c, Point d) : void
+    + setPoints(Point a, Point b, Point c) : void
+    + getPoints() : Point[]
+    - validateSquare(Point a, Point b, Point c, Point d) : boolean
+    - validateTriangle(Point a, Point b, Point c) : boolean
+    - linearFunction(Point firstPoint, Point secondPoint) : double[]
+    - calcFunction(double value, double m, double q) : double
+    
+}
+
+@enduml

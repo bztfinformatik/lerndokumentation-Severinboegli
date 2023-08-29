@@ -23,7 +23,7 @@ public class Dreieck {
     private boolean validateTriangle(Point a, Point b, Point c) {
         if (a.getX() != b.getX()) {
             double[] value = linearFunction(a, b);
-            if (verifyFunction(c.getX(), value[0], value[1]) == c.getY()) {
+            if (calcFunction(c.getX(), value[0], value[1]) == c.getY()) {
                 return false;
             }
             else {
@@ -32,7 +32,7 @@ public class Dreieck {
         } 
         else if(a.getX() != c.getX()) {
             double[] value = linearFunction(a, c);
-            if (verifyFunction(b.getX(), value[0], value[1]) == b.getY()) {
+            if (calcFunction(b.getX(), value[0], value[1]) == b.getY()) {
                 return false;
             }
             else {
@@ -50,7 +50,7 @@ public class Dreieck {
         return new double[]{m,q};
     }
 
-    private  double verifyFunction(double value, double m, double q) {
+    private  double calcFunction(double value, double m, double q) {
         return value*m + q;
     }
 
