@@ -10,6 +10,12 @@ Heute habe ich angefangen mit dem ersten der Projekts. Ich kann nun in den versc
 - *Befehlt:* `docker-compose up`
 - *Clear Cache (bei Fehlermeldung)*: `docker compose build --no-cache`
 
+## Theorie
+Heute habe ich zu folgenden Themen eine Theorie aufgeschrieben:
+- [Referenzen und Vergleiche](Theorie/Referenzen_Vergleich.md)
+- [Konstruktoren](Theorie/Konstruktoren.md)
+- [Methoden, Setter, Getter](Theorie/SetterGetter.md)
+
 ## Programmieraufgabe
 
 **Aufgabenstellung**: Erstellen eines Programs, dass mit Hilfe von Punkten Dreieck und Vierecke als Klassenobjekt erstellen kann.

@@ -78,7 +78,5 @@ public class Viereck {
 
     private  double calcFunction(double value, double m, double q) {
         return value*m + q;
-    }
-
-    
+    } 
 }
