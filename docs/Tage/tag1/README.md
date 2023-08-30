@@ -1,6 +1,5 @@
 # Inhalte zum Tag 1
 
-![Docker Logo](docker.png)
 
 ## Tätigkeiten
 > Docsify eingerichtet und funktionsfähig gemacht.

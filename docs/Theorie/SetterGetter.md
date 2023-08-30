@@ -1,7 +1,6 @@
-# JAVA Theorie
+# JAVA Theorie {docsify-ignore-all}
 
-In diesem Abschnitt wird alles rund um Java beschrieben. Es werden wichtige Java Funktionen und Basics dokumentiert. Um Codebeispiele besser darzustellen wrid mit Codesnippes gearbeitet:
-
+In diesem Abschnitt wird alles rund um Java beschrieben. Es werden wichtige Java Funktionen und Basics dokumentiert.
 
 
 ## Metoden

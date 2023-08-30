@@ -16,9 +16,7 @@ Heute habe ich zu folgenden Themen eine Theorie aufgeschrieben:
 ## Programmieraufgabe
 
 Ich habe bei der Programmieraufgabe das Projekt von letzter Woche weiterprogrammiert. Dies habe ich verfeinert, indem ich bei den Setter einen Filter gesetzt habe, der auf die Gültigkeit der Klassen prüft.
-Das PlantUML zu den Klassen sieht wie folgt aus:
 
-![Klassendiagramm](Klassendiagramm.png)
 
 > Point.java Klasse
 ```java
