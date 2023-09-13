@@ -14,37 +14,16 @@ Ich habe ausserdem das PlantUML für das Formenprojekt erstellt. Diese sieht wie
 Ich habe nur Theoriefragen beantwortet. Die Fragen wurden unter folgenden Punkten beantwortet.
 - [Zugriffsmodifizierer](Theorie/Zugriffsmodifizierer.md)
 - [Konstruktoren](Theorie/Konstruktoren.md)
-
-**Meine Notizen dazu:**
-
-<br><br>
-<div class="question-box">
-  Was bedeutet "ein Instanz erstellen"?
-</div>
-<br>
-Ein Objekt nach gewissem Bauplan erstellen.
-<br><br>
-<div class="question-box">
-  Ist die Variable instanzTestKonto1 eine Variable oder eine Referenz?
-</div>
-<br>
-Dies ist eine Variabel, da das Objekt mit "new" inizialisiert worden ist.
-<br><br>
-<div class="question-box">
-  Was passiert technisch im Speicher, wenn Sie instanzTestKonto1 = instanzTestKonto machen?
-</div>
-<br>
-Der Pointer von instanzTestKonto zeigt nun auf instanzTestKonto1. Nun hängen beide zusammen und wird eine Referenz verändert, wird auch die andere Verändert.
-<br>
-
+- [Referenzen_Vergleich](Theorie/Referenzen_Vergleich.md)
 
 
 ## Programmieraufgabe
 
-Bei der Programieraufgabe habe ich den Auftrag Konto01 gemacht. Dieser Auftrag war eine Art Mischung aus Fragen und Praxis.
+Bei der Programieraufgabe habe ich den Auftrag Konto01 gemacht. Dieser Auftrag war eine Art Mischung aus Fragen und Praxis. In der Main Klasse können nun nur die Getter, Setter und der Konstruktor aufgerufen werden, da alle Attribute als private dekliniert wurden.
 
 folgend noch den Code dazu:
 
+> Konto.java
 ```java
 public class Konto {
     private String kontoInhaber;
@@ -91,5 +70,23 @@ public class Konto {
         return saldoKonto;
     }
 
+}
+```
+
+> Main.java
+```java
+package ch.severinboegli;
+
+public class Main {
+    public static void main(String[] args) {
+        Konto instanzTestKonto = new Konto("Severin", "Sparkonto", 100, 23.3);
+        Konto instanzTestKonto01 = new Konto("Hans", "Hauptkonto", 101, 300.34);
+
+        instanzTestKonto01 = instanzTestKonto;
+        
+        System.out.println("Ausgabe sollte gleich sein:");
+        System.out.println("InstanzTestKonto Guthaben:" + instanzTestKonto.getSaldoKonto());
+        System.out.println("InstanzTestKonto1 Guthaben: " + instanzTestKonto01.getSaldoKonto());
+    }
 }
 ```

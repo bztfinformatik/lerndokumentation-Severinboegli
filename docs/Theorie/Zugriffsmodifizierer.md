@@ -63,7 +63,7 @@ double umfang = 2 * Math.PI;
 <div class="question-box">
   Was bedeuten die Modifizierer private/public?
 </div>
-<br>
-Wird keine Konstruktor in der Klasse angegeben oder erstellt, wird ein Standartkonstruktur aufgerufen. Dieser Standartkonstruktor ist standartmässig leer.
-<br>
 
+- Public bedeutet, dass man auch ausserhalb der Klasse auf die Variabel oder die Methode zugreifen kann.
+- Private bedeutet, dass man nur innerhalb der Klasse auf die Variabel oder die Methode zugreifen kann.
+> Siehe Grafik oben

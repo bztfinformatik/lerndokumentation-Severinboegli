@@ -8,4 +8,5 @@ Mit Hilfe von Docker konnte ich Docsify ausführen. Mein Projekt werde ich nicht
 Heute habe ich zu folgenden Themen eine Theorie aufgeschrieben:
 - [Git](Theorie/Git.md)
 
+![Git-Bash](git-bash.png)
 

@@ -42,6 +42,7 @@ Wird keine Konstruktor in der Klasse angegeben oder erstellt, wird ein Standartk
 Mit überladen ist gemeint, dass man für eine Klasse mehrere Konstruktoren machen, die je nach Übergabewert einen anderen Konstruktor aufruft. Sieht man sich das Beispiel oben an, sieht man, dass die Konstrukoren überladen wurden. Es gibt ein Konstruktor Brett ohne Input und ein Konstruktor Brett mit Input int.
 Das gleiche kann mit Methoden gemacht werden. Je nachdem welcher Input mitgegeben wird, wird eine andere Methode aufgerufen.
 <br>
+<br>
 <div class="question-box">
     Was macht der Konstruktor?
 </div>
