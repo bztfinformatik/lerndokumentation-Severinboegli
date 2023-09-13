@@ -1,261 +1,139 @@
 # Inhalte zum Tag 2
 
-![Screenshot VSC](starter.png)
 
 ## Tätigkeiten
-> Java Formenprojekt weiterprogrammiert
+> Docsify eingerichtet und funktionsfähig gemacht.
 
-Heute habe ich an dem Formenprojekt weiterprogrammiert und die Lineare Funktion implementiert. Diese Funktion prüft ob anhand von drei Punkten auf dem Koordinaten ob eine Funktion möglich ist oder nicht. Dies wird mit einer Linearen Funktion getestet und konnte auch für das Viereck übernommen werden.
+Heute habe ich angefangen mit dem ersten der Projekts. Ich kann nun in den verschiedenen "README" Dateien eine Dokumentation schreiben. Damit ich das Projekt ausführen konnte musste ich folgenden Code eingeben:
+
+- *Befehlt:* `docker-compose up`
+- *Clear Cache (bei Fehlermeldung)*: `docker compose build --no-cache`
 
 ## Theorie
 Heute habe ich zu folgenden Themen eine Theorie aufgeschrieben:
-- [Zugriffsmodifizierer](Theorie/Zugriffsmodifizierer)
-
-
+- [Referenzen und Vergleiche](Theorie/Referenzen_Vergleich.md)
+- [Konstruktoren](Theorie/Konstruktoren.md)
+- [Methoden, Setter, Getter](Theorie/SetterGetter.md)
 
 ## Programmieraufgabe
 
-Ich habe bei der Programmieraufgabe das Projekt von letzter Woche weiterprogrammiert. Dies habe ich verfeinert, indem ich bei den Setter einen Filter gesetzt habe, der auf die Gültigkeit der Klassen prüft.
-
+**Aufgabenstellung**: Erstellen eines Programs, dass mit Hilfe von Punkten Dreieck und Vierecke als Klassenobjekt erstellen kann.
+Damit ich ein Dreieck oder ein Viereck erstellen muss, sollte zuerst die Point Klasse definiert werden mit zwei wichtigen Parameter:
+- X Koordinate
+- Y Koordinate
 
 > Point.java Klasse
 ```java
-package ch.bztf;
-
 public class Point {
-    private double x = 0;
-    private double y = 0;
+    private int x = 0;
+    private int y = 0;
 
-    public Point (double x, double y){
+    public Point (int x, int y){
         setX(x);
         setY(y);
     }
 
-    public Point() {
-        this.x = 0;
-        this.y = 0;
+    public void setX(int x) {
+        this.x = x;
     }
 
-    public void setX(double x) {
-        this.x = validate(x);
+    public void setY(int y) {
+        this.y = y;
     }
 
-    public void setY(double y) {
-        this.y = validate(y);
-    }
-
-    public double getX() {
+    public int getX() {
         return x;
     }
 
-    public double getY() {
+    public int getY() {
         return y;
     }
 
-    public double[] getCordinates() {
-        return new double[]{x,y};
-    }
-
-    public boolean equals(Point point){
-        return this.getX() == point.getX() && this.getY() == point.getY();
-    }
-
-    private double validate(double value){
-        if (value <= 100 && value >= -100) {
-            return value;
-        } else {
-            System.out.println("Warning! Value is not between -100 and 100");
-            System.out.println("Value is set to 0");
-            return 0;
-        }
-
+    public int[] getCordinates() {
+        return new int[]{x,y};
     }
 }
 ```
+Hier wurde eine Klasse erstellt mit Getter und Setter. Beim Inizialisieren müssen dem Konstruktor zwei Parameterm mitgegeben werden.
+
+Da ein Viereck vier Punkte braucht, sollte jedem Viereck vier Objekte "Point" mitgegeben werden.
+Am einfachsten ist es hier mit Arrays zu arbeiten und wieder Getter und Setter zu setzten.
 
 > Viereck.java Klasse
 ```java
-package ch.bztf;
-
 public class Viereck {
     private Point[] points;
 
     public Viereck(Point a, Point b, Point c, Point d){
-        setPoints(a, b, c, d);
+        setPoints(new Point[]{a,b,c,d});
     }
 
-    public void setPoints(Point a, Point b, Point c, Point d) {
-        if (validateSquare(a, b, c, d)){
-            this.points = new Point[]{a,b,c,d};
-            System.out.println("Möglich");
-        } else {
-            System.out.println("Koordinaten sind auf einer Gerade");
-        }
+    public void setPoints(Point[] points) {
+        this.points = points;
     }
 
     public Point[] getPoints() {
         return points;
     }
-
-    /* Prüft alle möglichen Kombinationen, um mit drei der vier Punkte ein Dreieck zu bilden. */
-    private boolean validateSquare(Point a, Point b, Point c, Point d) {
-        if (!validateTriangle(b, c, d)) {
-                return false;
-            }
-
-        if (!validateTriangle(a, c, d)) {
-                return false;
-            }
-            
-            
-        if (!validateTriangle(a, b, d)) {
-                return false;
-            }
-            
-        if (!validateTriangle(a, b, c)) {
-                return false;
-            }    
-
-        return true;
-    }
-
-    /* Damit ein Dreieck möglich ist, muss beim Viereck ebenfalls ein Dreieck möglich sein, wenn man einen Punkt entfernt. */
-    private boolean validateTriangle(Point a, Point b, Point c) {
-        if (a.getX() != b.getX()) {
-            double[] value = linearFunction(a, b);
-            if (calcFunction(c.getX(), value[0], value[1]) == c.getY()) {
-                return false;
-            }
-            else {
-                return true;
-            }
-        } 
-
-        else if(a.getX() != c.getX()) {
-            double[] value = linearFunction(a, c);
-            if (calcFunction(b.getX(), value[0], value[1]) == b.getY()) {
-                return false;
-            }
-            else {
-                return true;
-            }
-        } 
-
-        else {
-            return false;
-        }
-    }
-
-    private double[] linearFunction(Point firstPoint, Point secondPoint ){
-        double m = (firstPoint.getY()-secondPoint.getY()) / (firstPoint.getX() - secondPoint.getX());
-        double q = firstPoint.getY() - (m * firstPoint.getX());
-
-        return new double[]{m,q};
-    }
-
-    private  double calcFunction(double value, double m, double q) {
-        return value*m + q;
-    } 
 }
 ```
 
+Bei der Dreiecksklasse wird das Selbe gemacht wie bei dem Viereck mit Ausnahme, dass es nun nur drei Punkte sind. In der Setter Funktion könnte man nun definieren, dass kein Punkt am selben Ort wieder der andere Punkt liegen darf. Dies könnte man nun abfangen und ein Fehler ausgeben.
+
 > Dreieck.java Klasse
 ```java
-package ch.bztf;
-
 public class Dreieck {
     private Point[] points;
 
     public Dreieck(Point a, Point b, Point c) {
-        setPoints(a, b, c);
+        setPoints(new Point[]{a,b,c});
     }
 
     public Point[] getPoints() {
         return points;
     }
 
-    public void setPoints(Point a, Point b, Point c) {
-       if (validateTriangle(a, b, c)){
-            this.points = new Point[]{a,b,c};
-            System.out.println("Möglich");
-        } else {
-            System.out.println("Koordinaten sind auf einer Gerade");
-        }
-    }
-
-    private boolean validateTriangle(Point a, Point b, Point c) {
-        if (a.getX() != b.getX()) {
-            double[] value = linearFunction(a, b);
-            if (calcFunction(c.getX(), value[0], value[1]) == c.getY()) {
-                return false;
-            }
-            else {
-                return true;
-            }
-        } 
-        else if(a.getX() != c.getX()) {
-            double[] value = linearFunction(a, c);
-            if (calcFunction(b.getX(), value[0], value[1]) == b.getY()) {
-                return false;
-            }
-            else {
-                return true;
-            }
-        } 
-        else {
-            return false;
-        }
-    }
-
-    private double[] linearFunction(Point firstPoint, Point secondPoint ){
-        double m = (firstPoint.getY()-secondPoint.getY()) / (firstPoint.getX() - secondPoint.getX());
-        double q = firstPoint.getY() - (m * firstPoint.getX());
-        return new double[]{m,q};
-    }
-
-    private  double calcFunction(double value, double m, double q) {
-        return value*m + q;
-    }
-
-    public String getPointsToString() {
-        String text = "Koordinaten: \n";
-        for (int i = 0; i < points.length; i++) {
-            text += "X: " + points[i].getX() + " | Y: " + points[i].getY() + "\n";
-        }
-        return text;
+    public void setPoints(Point[] points) {
+        this.points = points;
     }
 }
-
 ```
+
+Nun können Dreieck und Vierecke erstellt werden und mit dem Getter abgerufen werden:
 
 > Main.java Klasse
 ```java
-package ch.bztf;
-
 public class Main {
     public static void main(String[] args) {
-        Point pointA = new Point(1, 12);
-        Point pointB = new Point(5, 52);
-        Point pointC = new Point(1, 22);
-        Point pointD = new Point(-2, -8);
-        Point pointE = new Point(-1, -8);
-        Point pointF = new Point(-102, -8);
+        Point pointA = new Point(-5, 0);
+        Point pointB = new Point(10, 1);
+        Point pointC = new Point(9, 4);
+        Point pointD = new Point(-1, 5);
 
-        //Dreieck dreieckA = new Dreieck(pointA,pointB,pointC);
+        Dreieck dreieckA = new Dreieck(pointA,pointB,pointC);
 
         Viereck viereckA = new Viereck(pointA, pointB, pointC, pointD);
 
-        Dreieck dreieck = new Dreieck(pointA, pointB, pointC);
-        System.out.println("Koordinaten des ersten Dreiecks: ");
-        System.out.println(dreieck.getPointsToString());
-
-        System.out.println("Koordinaten des zweiten Dreiecks: (Abänderung auf eine Gerade, was nicht möglich ist)");
-        dreieck.setPoints(pointA, pointB, pointE);
-        System.out.println(dreieck.getPointsToString());
-
-        System.out.println("Koordinaten des dritten Dreiecks: (nach möglicher Abänderung)");
-        dreieck.setPoints(pointA, pointB, pointD);
-        System.out.println(dreieck.getPointsToString());
+        System.out.println("Dreieck Kordinaten von Punkt B:");
+        System.out.println("X Achse: " + dreieckA.getPoints()[1].getX());
+        System.out.println("Y Achse: " + dreieckA.getPoints()[1].getY());
+        System.out.println("-------------");
+        System.out.println("Viereck Kordinaten von Punkt D");
+        System.out.println("X Achse: " + viereckA.getPoints()[3].getX());
+        System.out.println("Y Achse: " + viereckA.getPoints()[3].getY());
     }
 }
 ```
+
+
+## Schwierigkeiten
+
+> Docsify auf Windows
+
+Es war zu Beginn anspruchsvoll Docker auf Windows verwenden zu können, da Docker wie viele Dinge auf Linux basiert.
+
+## To Do
+
+- [X] Einrichtung abschliessen
+- [X] Hausaufgaben machen
+- [X] Java anschauen

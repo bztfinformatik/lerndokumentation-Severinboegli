@@ -57,3 +57,13 @@ Ein Spezialfall ist wenn es wenn eine Funktion oder ein Attribut statisch ist. E
 double umfang = 2 * Math.PI;
 ```
 
+## Frage
+
+
+<div class="question-box">
+  Was bedeuten die Modifizierer private/public?
+</div>
+<br>
+Wird keine Konstruktor in der Klasse angegeben oder erstellt, wird ein Standartkonstruktur aufgerufen. Dieser Standartkonstruktor ist standartmässig leer.
+<br>
+

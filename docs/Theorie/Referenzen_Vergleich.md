@@ -20,3 +20,11 @@ Circle c = b;
 
 - Mit dem `==` Operator wird vergleichen ob beide Werte (b & c) auf das gleiche Objekt (Referenz) zeigen.
 - Mit der `.equals()` Methode wird geschaut ob der Inhalt der selbe ist, also ob beide Objekte den Parameter "length" auf 10 haben.
+
+## Instanzen
+
+Eine Instanz ist ein Objekt von einer gewissen Klasse. Beim Erstellen dieser Instanz wurde ein Objekt nach Vorgabe der Klasse erstellt. Eine Instanz ist also ein entstandenes Objekt nach Vorgaben der Klasse.
+<br>
+<div class="question-box">
+    Ist eine erstel
+</div>
