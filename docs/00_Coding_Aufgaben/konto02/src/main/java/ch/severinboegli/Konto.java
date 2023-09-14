@@ -27,11 +27,11 @@ public class Konto {
         setSaldoKonto(0);
     }
 
-    public Konto(String nameKonto) {
-        setKontoInhaber("Severin");
+    public Konto(String nameKonto, int saldoKonto, String kontoInhaber) {
+        setKontoInhaber(kontoInhaber);
         setNameKonto(nameKonto);
         setNummerKonto(100);
-        setSaldoKonto(0);
+        setSaldoKonto(saldoKonto);
     }
 
     public Konto(int nummerKonto) {
@@ -83,8 +83,6 @@ public class Konto {
         setSaldoKonto(saldoKonto);
     }
 
-
-
     public void setKontoInhaber(String kontoInhaber){
         this.kontoInhaber = kontoInhaber;
     }
@@ -114,6 +112,39 @@ public class Konto {
     }
 
     public double getSaldoKonto() {
+        return saldoKonto;
+    }
+
+    private void ausgabe(String stringAusgabe) {
+        System.out.println(stringAusgabe);
+    }
+
+    private void ausgabe(int stringAusgabe) {
+        System.out.println(stringAusgabe);
+    }
+
+    private void ausgabe(double stringAusgabe) {
+        System.out.println(stringAusgabe);
+    }
+    
+    public String getKontoInhaberOut()
+    {
+        ausgabe(kontoInhaber);
+        return kontoInhaber;
+    }
+
+    public String getNameKontoOut(){
+        ausgabe(nameKonto);
+        return nameKonto;
+    }
+
+    public int getNummerKontoOut() {
+        ausgabe(nummerKonto);
+        return nummerKonto;
+    }
+
+    public double getSaldoKontoOut() {
+        ausgabe(saldoKonto);
         return saldoKonto;
     }
 

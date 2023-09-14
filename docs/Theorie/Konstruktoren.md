@@ -23,6 +23,8 @@ Erstellt man mehrere Konstruktoren, kann man beim inizialisieren entscheiden, we
 - `Brett()`
 - `Brett(30)`
 
+Diese Möglichkeit, wenn man mehrere Konstruktoren oder Methoden von einer Klasse aufrufen kann, nennt man Überladung. Es können sehr viele Konstruktoren gemacht werden, der entscheidene Punkt wie viele erstellt werden können, bestimmen jedoch die Datentypen, die übergeben werden. Es können nicht in zwei unterschiedlichen Konstruktoren nur ein String übergeben werden, da Java mit Hilfe der Datentypen unterscheidet und nicht dem Platzhaltername.
+
 Im Bezug auf die obere Funktion können beide Konstruktoren benutzt werden.
 Ein Konstrukur wird viel in Verwendung mit dem `this` benutzt.
 

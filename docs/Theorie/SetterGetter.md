@@ -7,6 +7,22 @@ In diesem Abschnitt wird alles rund um Java beschrieben. Es werden wichtige Java
 
 Methoden werden benutzt um Parameter kontrolliert verändern zu können. Ebenfalls kann mit einer Funktion ein Event ausgeführt werden, der als Konsequenz eine Veränderung beim Programm bewirkt.
 
+## Methodensignatur
+
+Spricht man von der Methodensignatur, meint man damit, was der Methode mitgegeben wird & wie der Name ist. In den untenstehenden Methoden ist die Methodensignatur also ```add(int x, int y)``` Jedoch darf die Methodensignatur beim Überladen von Methodne oder Konstruktoren nicht gleich sein, da dies sonst zu einem Fehler führt.
+
+```java
+public void add(int x, int y){
+    System.out.println(x + y);
+}
+
+private int add(int x, int y){
+    return x + y;
+}
+
+// Dies ist nicht möglich, beide Methoden haben die gleiche Methodensignatur.
+```
+
 ## Getter
 
 ```java
@@ -30,3 +46,4 @@ public void setPoints(int points) {
 ```
 
 Mit Setter kann eine Parameter kontrolliert verändert werden. Dies macht Sinn, damit einem Parameter nur sinnvolle Werte zugewiesen werden können.
+
