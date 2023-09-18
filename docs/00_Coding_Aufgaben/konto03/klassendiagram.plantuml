@@ -1,0 +1,37 @@
+@startuml
+class Konto {
+    - kontoInhaber : String
+    - nameKonto : String
+    - nummerKonto : int
+    - saldoKonto : double
+    - ausgabe(String stringAusgabe) : void
+    - ausgabe(int stringAusgabe) : void
+    - ausgabe(double stringAusgabe) : void
+    -- Konstruktoren --
+    + Konto(String kontoInhaber, String nameKonto, int nummerKonto, double saldoKonto) : void
+    + Konto() : void
+    + Konto(String kontoInhaber) : void
+    + Konto(String nameKonto, int saldoKonto, String kontoInhaber) : void
+    + Konto(int nummerKonto) : void
+    + Konto(double saldoKonto) : void
+    + Konto(String kontoInhaber, String nameKonto) : void
+    + Konto(String nameKonto, int nummerKonto) : void
+    + Konto(int nummerKonto, double saldoKonto) : void
+    + Konto(String kontoInhaber, String nameKonto, int nummerKonto) : void
+    + Konto(String nameKonto, int nummerKonto, double saldoKonto) : void
+
+    ---
+    + setKontoInhaber(String kontoInhaber) : void
+    + setNameKonto(String nameKonto) : void
+    + setNummerKonto(int nummerKonto) : void
+    + setSaldoKonto(double saldoKonto) : void
+    + getKontoInhaber() : String
+    + getNameKonto() : String
+    + getNummerKonto() : int
+    + getSaldoKonto() : double
+    + getKontoInhaberOut() : String
+    + getNameKontoOut() : String
+    + getNummerKontoOut() : int
+    + getSaldoKontoOut() : double
+}
+@enduml

@@ -10,3 +10,8 @@ Heute habe ich zu folgenden Themen eine Theorie aufgeschrieben:
 
 ![Git-Bash](git-bash.png)
 
+## Github
+Github werde ich nutzen, um das Repo zu pushen und als Datenablage. Mit Hilfe von Github Desktop kann das Gitprozess auch über eine grafische Oberfläche verwaltet werden. Um zu überprüfen, ob das Repo aktuell ist, sollte man auf [Github.com](https://github.com/) das relevante Repo öffnen und die Änderungen überprüfen.
+
+![Github-Desktop](github_desktop.png)
+
