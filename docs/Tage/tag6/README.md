@@ -107,7 +107,100 @@ Um die Anzahl Instanzen zu zählen, wird in jedem Konstruktor ```anzahlInstanzen
 
 ![Tabelle statisch](tabStaticObjektbezog.png)
 
+Die obige Grafik ist eine schöne Darstellung, die den Unterschied zwischen statisch und Objektbezogene Komponenten darstellt.
 
+> Merken --> Statische Komponenten werden nur einmal geladen. In der Regel erfolgt dies zu Begin eines Programms.
+> Statische Aufrufe können mit dem Klassenname.Methode ausgeführt werden.
+
+
+### Code auf Konto03
+
+> Ausschnitt aus Konto.java
+
+```java
+public class Konto {
+    private static int anzahlInstanzen = 0;
+    private String kontoInhaber;
+    private String nameKonto;
+    private int nummerKonto;
+    private double saldoKonto;
+
+    ...
+    ...
+
+    public static Konto createKonto() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Konto wird erstellt:");
+        System.out.println("Wie lautet der Name des Kontoinhaber?");
+        String kontoinhaber = scanner.nextLine();
+        System.out.println("Wie lautet das Konto?");
+        String nameKonto = scanner.nextLine();
+        System.out.println("Welche Nummer hat das Konto?");
+        int nummerKonto = scanner.nextInt();
+        System.out.println("Wie hoch ist der momentane Saldo?");
+        double saldoKonto = scanner.nextDouble();
+
+        while (!isPossitiv(saldoKonto)) {
+            System.out.println("Fehler, Zahl konnte nicht angenommen werden (ist negativ)");
+            System.out.println("Wie hoch ist der momentane Saldo?");
+            saldoKonto = scanner.nextDouble();
+        }
+
+
+        return new Konto(kontoinhaber, nameKonto, nummerKonto, saldoKonto);
+    }
+
+    public static void ausgabeAnzahlInstanzen() {
+        System.out.println("Anzahl Kontoinstanzen: " + anzahlInstanzen);
+    }
+
+    private static boolean isPossitiv(double saldo){
+        return saldo >= 0;
+    }
+
+    public static void makeGreeting(){
+        System.out.println("Guten Tag!");
+    }
+
+    public static void makeGreeting(int anzahl) {
+        for (int i = 0; i < anzahl; i++) {
+            System.out.println("Guten Tag!");
+        }
+    }
+}
+```
+
+> Main.java
+
+```java
+public class Main {
+    
+    public static void main(String[] args) {
+        Konto.makeGreeting();
+
+        ArrayList<Konto> kontos = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            kontos.add(Konto.createKonto());
+        }
+
+        System.out.println("Anzeigen Aller Konto");
+        for (int i = 0; i < kontos.size(); i++) {
+            System.out.println("Inhaber: " + kontos.get(i).getKontoInhaber());
+            System.out.println("Kontoname: " + kontos.get(i).getNameKonto());
+            System.out.println("Kontonummer: " + kontos.get(i).getNummerKonto());
+            System.out.println("Saldo vom Konto:" + kontos.get(i).getSaldoKonto());
+            System.out.println("------------");
+        }
+
+        Konto.makeGreeting(3);
+        Konto.ausgabeAnzahlInstanzen();
+    }
+}
+```
+
+Da ich nun eine Funktion habe, die mit Benutzereingabe neue Kontos erstellt, kann ich nun dynamisch Konto inizialisieren, ohne dass ich jedes mal einen neuen Benutzer erstellen muss.
+
+Die Funktion "createKonto()" wird benutzt, um ein Konto zu erstellen, von einem Benutzerinput. Das erstellte Konto wird in einer Arraylist gespeichert. Die Arraylist kann ich nun mit einem For-Loop ausgeben.
 
 
 

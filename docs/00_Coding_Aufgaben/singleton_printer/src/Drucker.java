@@ -1,5 +1,6 @@
 class Drucker{
     private static Drucker drucker;
+    public static int test;
     private int anzahlSeiten;
     private Drucker(){
         anzahlSeiten = 0;

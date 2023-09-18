@@ -1,5 +1,7 @@
 package ch.severinboegli;
 
+import java.util.Scanner;
+
 public class Konto {
     private static int anzahlInstanzen = 0;
     private String kontoInhaber;
@@ -138,10 +140,6 @@ public class Konto {
     private void ausgabe(double stringAusgabe) {
         System.out.println(stringAusgabe);
     }
-    
-    public static void ausgabeAnzahlInstanzen() {
-        System.out.println("Anzahl Kontoinstanzen: " + anzahlInstanzen);
-    }
 
     public String getKontoInhaberOut()
     {
@@ -164,4 +162,43 @@ public class Konto {
         return saldoKonto;
     }
 
+    public static Konto createKonto() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Konto wird erstellt:");
+        System.out.println("Wie lautet der Name des Kontoinhaber?");
+        String kontoinhaber = scanner.nextLine();
+        System.out.println("Wie lautet das Konto?");
+        String nameKonto = scanner.nextLine();
+        System.out.println("Welche Nummer hat das Konto?");
+        int nummerKonto = scanner.nextInt();
+        System.out.println("Wie hoch ist der momentane Saldo?");
+        double saldoKonto = scanner.nextDouble();
+
+        while (!isPossitiv(saldoKonto)) {
+            System.out.println("Fehler, Zahl konnte nicht angenommen werden (ist negativ)");
+            System.out.println("Wie hoch ist der momentane Saldo?");
+            saldoKonto = scanner.nextDouble();
+        }
+
+
+        return new Konto(kontoinhaber, nameKonto, nummerKonto, saldoKonto);
+    }
+
+    public static void ausgabeAnzahlInstanzen() {
+        System.out.println("Anzahl Kontoinstanzen: " + anzahlInstanzen);
+    }
+
+    private static boolean isPossitiv(double saldo){
+        return saldo >= 0;
+    }
+
+    public static void makeGreeting(){
+        System.out.println("Guten Tag!");
+    }
+
+    public static void makeGreeting(int anzahl) {
+        for (int i = 0; i < anzahl; i++) {
+            System.out.println("Guten Tag!");
+        }
+    }
 }
