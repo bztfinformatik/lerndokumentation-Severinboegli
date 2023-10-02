@@ -8,3 +8,5 @@ In diesem Abschnitt wird alles rund um Java beschrieben. Es werden wichtige Java
 * [Methoden, Setter, Getter](Theorie/SetterGetter.md)
 * [Zugriffsmodifizierer](Theorie/Zugriffsmodifizierer.md)
 * [Singleton](Theorie/Singleton.md)
+* [Javadoc](Theorie/Javadoc.md)
+* [Exceptions](Theorie/Exceptions.md)

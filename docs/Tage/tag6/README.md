@@ -6,6 +6,7 @@ Heute habe ich Das Konto03 bearbeitet.
 
 
 ## Theorie
+Heute habe ich keine Theorie gelernt, respektive noch gelernt. Die [Singleton](Theorie/Singleton.md) Theorie habe ich bereits letztes Mal dokumentiert.
 
 ## Praxisauftrag
 

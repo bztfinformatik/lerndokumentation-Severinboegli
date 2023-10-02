@@ -1,0 +1,45 @@
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-source
+'1.8'
+-sourcepath
+'C:/Coding_Local/School/lerndokumentation-Severinboegli/docs/00_Coding_Aufgaben/einfachesprojekt/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Coding_Local/School/lerndokumentation-Severinboegli/docs/00_Coding_Aufgaben/einfachesprojekt/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'einfachesprojekt 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' 'C:/Coding_Local/School/lerndokumentation-Severinboegli/docs/00_Coding_Aufgaben/einfachesprojekt/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'einfachesprojekt 1.0-SNAPSHOT API'
+ch.severinboegli
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\src\main\java = 1695628594949
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\allclasses-index.html = 1695629026291
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\allpackages-index.html = 1695629026307
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\copy.svg = 1695629026354
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\element-list = 1695629026244
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\help-doc.html = 1695629026338
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\index-all.html = 1695629026338
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\index.html = 1695629026338
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\jquery-ui.overrides.css = 1695629026401
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\member-search-index.js = 1695629026323
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\module-search-index.js = 1695629026320
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\overview-tree.html = 1695629026291
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\package-search-index.js = 1695629026323
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\script.js = 1695629026354
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\search.js = 1695629026354
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\stylesheet.css = 1695629026338
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\tag-search-index.js = 1695629026323
+C:\Coding_Local\School\lerndokumentation-Severinboegli\docs\00_Coding_Aufgaben\einfachesprojekt\target\site\apidocs\type-search-index.js = 1695629026323

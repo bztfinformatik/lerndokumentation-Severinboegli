@@ -1,8 +1,9 @@
-class Drucker{
+class Drucker {
     private static Drucker drucker;
     public static int test;
     private int anzahlSeiten;
-    private Drucker(){
+
+    private Drucker() {
         anzahlSeiten = 0;
     } // Leerer Konstruktor
 
@@ -19,5 +20,6 @@ class Drucker{
         System.out.println("\n----------------");
         System.out.println("Anzahl gedruckte Seiten: " + anzahlSeiten);
         System.out.println("----------------\n");
+
     }
 }
