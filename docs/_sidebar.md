@@ -11,6 +11,7 @@
       - [Singleton](Theorie/Singleton.md)
       - [Javadoc](Theorie/Javadoc.md)
       - [Exceptions](Theorie/Exceptions.md)
+      - [Collections API](Theorie/Collections_API.md)
     * [Tag 1](Tage/tag1/)
     * [Tag 2](Tage/tag2/)
     * [Tag 3](Tage/tag3/)
