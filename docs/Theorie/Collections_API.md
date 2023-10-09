@@ -2,6 +2,12 @@
 
 ## Collections API
 
+> - [ArrayList](#arraylist)
+> - [LinkedList](#linkedlist)
+> - [HashMap](#hashmap)
+> - [TreeMap](#treemap)
+> - [HashSet](#hashset)
+
 Eine Gemeinsamkeit, die alle Collections haben, ist, dass sie alle Daten speichern und ausgeben können. Die verschiedenen Collections machen die alle auf eine unterschiedliche Art und Weise. Dabei sollte man sich die Frage stellen, welche Eigenschaft einem am wichtigsten ist, damit man möglichst effizient und sinnvoll die Daten speichern und abrufen kann.
 
 **Folgende Eigenschaften sind dabei zu beachten:**
@@ -19,6 +25,7 @@ Eine Gemeinsamkeit, die alle Collections haben, ist, dass sie alle Daten speiche
 Aufgrund dieser Kriterien kann nun entschieden werden welche Collections verwendet werden sollten. Dies können je nach Anwendung auch verschiedene Collections sein.
 
 ### ArrayList
+
 
 Eine ArrayList ist sehr verwandt mit einem normalen Array. Im Unterschied dazu, ist eine Arrayliste dynamisch erweiterbar. Will man, dass die Daten sortiert sind und in der Reihenfolge aufgerufen werden, macht eine Arraylist Sinn. In einer ArrayList werden die Daten normal in einer Array gespeichert.
 
@@ -94,6 +101,41 @@ for (String i : voci.keySet()) {
 }
 ```
 
+### TreeMap
+Ein TreeMap ist sehr ähnlich wie ein HashSet, im unterschied zu einer HashMap wird bei einer TreeMap der Wert nicht in einem Hashtable gespeichert sondern in einem Binärbaum. Dies ermöglicht, dass die Werte in einer TreeMap sortiert sind. Eine TreeMap kann verwendet werden, wenn die Werte sortiert und spezifisch abgerufen werden müssen.
+
+**Syntax:**
+```java
+TreeMap<String, Integer> number = new TreeMap<>();
+
+        number.put("Eins", 1); // Numbern hinzufügen
+        number.put("Zwei", 2);
+
+        TreeMap<String, Integer> otherNumbers = new TreeMap<>();
+        otherNumbers.put("Drei", 3);
+        otherNumbers.putAll(number); // Map einer anderen Map hinzufügen
+
+        System.out.println("Alle Werte ausgeben:" + otherNumbers.entrySet()); // Alle Werte ausgeben: [Drei=3, Eins=1, Zwei=2]
+        System.out.println("Keys: " + otherNumbers.keySet()); // Keys: [Drei, Eins, Zwei]
+        System.out.println("Value: " + otherNumbers.values()); // Value: [3, 1, 2]
+
+        number.get("Eins"); // Wert abrufen über den Key
+        number.remove("Eins"); // Entfernt das Paar und gibt den Wert aus.
+        number.remove("Eins", 1); // Entfernt den Wert nur, wenn der Key mit dem Wert übereinstimmt => gibt ein boolean aus.
+
+        otherNumbers.firstEntry(); // erster Wert
+        otherNumbers.lastKey(); // letzter Schlüssel
+
+        otherNumbers.lowerEntry("Eins"); // gibt den nächstkleineren Wert des Schlüssels als Wert zurück
+
+        // Weitere Funktionen
+        otherNumbers.containsKey("Eins"); // prüft ob ein Schlüssel in der Map vorkommt
+        otherNumbers.size(); // gibt die Grösse aus
+```
+
+Wichtig zu erwähnen ist es, dass eine TreeMap die Element in alphabetischer Reihenfolge ordnet. Dies kann beim Abrufen praktisch sein.
+
+
 ### HashSet
 Eine Set wird benutzt, wenn ein Wert nur einmal vorkommen darf. Im Unterschied zu einer LinkedHashSet werden die Werte in einer HashSet in einer zufälligen Reihenfolge gespeichert.
 
@@ -115,6 +157,73 @@ cars.remove("Volvo");
 for (String i : cars) {
   System.out.println(i);
 }
+```
+
+### Unterschied HashSet, LinkedHashSet & TreeSet
+Ein HashSet, ein LinkedHashSet und eine TreeSet sind zwar alle ein Set, also ein Wert kann nur einmal gespeichert werden, jedoch unterscheiden sie sich, wie der Wert gespeichert wird.
+
+* **HashSet:** Ein HashSet speichert die Werte in zufälliger Reihenfolge, da er beim Abruf mit Hilfe des Keys darauf zugreift.
+* **LinkedHashSet:** Ein LinkedHashSet ist in der Art und Weise sehr ähnlich zu der HashSet, ausser, dass er seine Werte in der hinzugefügten Reihenfolge ordnet und auch bei einem Loop so abruft.
+* **TreeSet:** Ein TreeSet speichert sich die Werte in alphabetischer Reihenfolge, also wird bei einem Loop das "1" vor dem "5" ausgegeben.
+
+> Beispiel der Set => siehe unten für output!
+
+```java
+package com.severinboegli;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.TreeSet;
+
+public class Main {
+    public static void main(String[] args) {
+        int anzahlZahlen = 10;
+
+        // Mit Werten füllen
+        HashSet<Integer> hashSet = new HashSet<>();
+        LinkedHashSet<Integer> linkedHashSet = new LinkedHashSet<>();
+        TreeSet<Integer> treeSet = new TreeSet<>();
+
+        System.out.println("Werte: ");
+        for (int i = 0; i < anzahlZahlen; i++) {
+            int temp = (int) (Math.random() * 100) + 1;
+            System.out.print(temp + " ");
+            hashSet.add(temp);
+            linkedHashSet.add(temp);
+            treeSet.add(temp);
+        }
+
+        System.out.print("\nLinkedHashSet: [");
+        for (Integer integer : linkedHashSet) {
+            System.out.print(" " + integer);
+        }
+        System.out.print("]\n");
+
+        System.out.print("HashSet: [");
+        for (Integer integer : hashSet) {
+            System.out.print(" " + integer);
+        }
+        System.out.print("]\n");
+
+        System.out.print("TreeSet: [");
+        for (Integer integer : treeSet) {
+            System.out.print(" " + integer);
+        }
+        System.out.print("]\n");
+
+    }
+}
+
+/*
+ OUTPUT:
+
+    Werte: 
+    2 85 82 74 81 39 35 29 28 67
+    LinkedHashSet: [ 2 85 82 74 81 39 35 29 28 67]
+    HashSet: [ 81 2 82 35 67 85 39 74 28 29]
+    TreeSet: [ 2 28 29 35 39 67 74 81 82 85]
+    
+ */
 ```
 
 

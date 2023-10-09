@@ -17,10 +17,11 @@ Ich habe heute die Theorie zu den Collections API geschrieben. Ich habe die vers
 
 ## Praxisaufgabe
 
+### Aufgabe 1.1 & 1.2
 > Lösung zu Collections 1.1 & 1.2
 
-
 ```java
+
 package com.severinboegli;
 
 import java.util.ArrayList;
@@ -61,7 +62,7 @@ public class Main {
 }
 ```
 
-
+### Aufgabe 1.3
 > Lösung zu Aufgabe 1.3 --> Durchschnitt berechnen
 ```java
 package com.severinboegli;
@@ -104,3 +105,93 @@ public class ArrayList2 {
 
 }
 ```
+### Aufgabe 1.4
+> Lösung zur Praxiaufgabe 1.4
+```java
+// ----------------------------------------------------
+/*-------------   Student.java Class ------------------ */
+// ----------------------------------------------------
+
+package com.severinboegli;
+
+public class Student {
+    private String name;
+    private String vorname;
+    private int matrikelnummer;
+
+    public Student(String name, String vorname, int matrikelnummer) {
+        setName(name);
+        setVorname(vorname);
+        setMatrikelnummer(matrikelnummer);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setVorname(String vorname) {
+        this.vorname = vorname;
+    }
+
+    public void setMatrikelnummer(int matrikelnummer) {
+        this.matrikelnummer = matrikelnummer;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getVorname() {
+        return vorname;
+    }
+
+    public int getMatrikelnummer() {
+        return matrikelnummer;
+    }
+}
+
+// ----------------------------------------------------
+/*-------------   Main.java Class ------------------ */
+// ----------------------------------------------------
+
+package com.severinboegli;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class Main {
+    public static void main(String[] args) {
+        Student hans = new Student("Hans", "Müller", 100);
+        Student peter = new Student("Peter", "Obster", 101);
+        Student johannes = new Student("Johannes", "Meier", 102);
+
+        TreeMap<Integer, Student> studenten = new TreeMap<>(); // TreeMap mit Integer als Key und Student als Value machen.
+
+        // Daten einfügen
+        studenten.put(hans.getMatrikelnummer(), hans); 
+        studenten.put(peter.getMatrikelnummer(), peter);
+        studenten.put(johannes.getMatrikelnummer(), johannes);
+
+        // make a loop => get iterator
+        Set set = studenten.entrySet();
+        Iterator iterator = set.iterator();
+
+        System.out.println("Alle TreeMap Elemente ausgeben:");
+        while(iterator.hasNext()) {
+            Map.Entry mapEntry =  (Map.Entry) iterator.next();
+            System.out.println("\nSchüler:");
+            System.out.println("Name: " + ((Student)mapEntry.getValue()).getName());
+            System.out.println("Vorname: " + ((Student)mapEntry.getValue()).getVorname());
+            System.out.println("Matrikelnummer: " + ((Student)mapEntry.getValue()).getMatrikelnummer());
+        }
+
+        // Nummer abrufen
+        System.out.println("Name von Nummer 100: " + studenten.get(100).getName());
+    }
+}
+```
+
+### Aufgabe 1.5
+Die Aufgabe 1.5 habe ich unter Collections API im [Unterschied HashSet, LinkedHashSet & TreeSet](Theorie/Collections_API?id=unterschied-hashset-linkedhashset-amp-treeset) Bereich genauer beschrieben.
