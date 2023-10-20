@@ -50,7 +50,7 @@ for (int i = 0; i < cars.size; i++) {
 
 ### LinkedList
 
-Eine LinkedList ist sehr ähnlich zu einer ArrayList. Beide basieren auf eine List, weshalb auch beide die die gleichen Methoden haben. Im Gegensatzu zu einer ArrayList werden in einer LinkedList die Daten in einem Container gespeichert, der auf einen weiteren Contrainer verlinkt. Man sollte eine LinkedList verwendet, wenn man oft *Daten manipulieren* möchte.
+Eine LinkedList ist sehr ähnlich zu einer ArrayList. Beide basieren auf eine List, weshalb auch beide die die gleichen Methoden haben. Im Gegensatz zu einer ArrayList werden in einer LinkedList die Daten in einem Container gespeichert, der auf einen weiteren Contrainer verlinkt. Man sollte eine LinkedList verwendet, wenn man oft *Daten manipulieren* möchte.
 
 **Syntax:**
 ```java
@@ -102,7 +102,7 @@ for (String i : voci.keySet()) {
 ```
 
 ### TreeMap
-Ein TreeMap ist sehr ähnlich wie ein HashSet, im unterschied zu einer HashMap wird bei einer TreeMap der Wert nicht in einem Hashtable gespeichert sondern in einem Binärbaum. Dies ermöglicht, dass die Werte in einer TreeMap sortiert sind. Eine TreeMap kann verwendet werden, wenn die Werte sortiert und spezifisch abgerufen werden müssen.
+Ein TreeMap ist sehr ähnlich wie ein HashMap, im Unterschied zu einer HashMap wird bei einer TreeMap der Wert nicht in einem Hashtable gespeichert sondern in einem Binärbaum. Dies ermöglicht, dass die Werte in einer TreeMap sortiert sind. Eine TreeMap kann verwendet werden, wenn die Werte sortiert und spezifisch abgerufen werden müssen.
 
 **Syntax:**
 ```java
