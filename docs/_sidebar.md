@@ -12,6 +12,7 @@
       - [Javadoc](Theorie/Javadoc.md)
       - [Exceptions](Theorie/Exceptions.md)
       - [Collections API](Theorie/Collections_API.md)
+      - [Assoziationen](Theorie/Assoziationen.md)
     * [Tag 1](Tage/tag1/)
     * [Tag 2](Tage/tag2/)
     * [Tag 3](Tage/tag3/)
@@ -20,3 +21,5 @@
     * [Tag 6](Tage/tag6/)
     * [Tag 7](Tage/tag7/)
     * [Tag 8](Tage/tag8/)
+    * [Tag 9](Tage/tag9/)
+    * [Tag 10](Tage/tag10/)
