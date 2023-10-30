@@ -1,8 +1,4 @@
-# JAVA Theorie {docsify-ignore-all}
-
-In diesem Abschnitt wird alles rund um Java beschrieben. Es werden wichtige Java Funktionen und Basics dokumentiert.
-
-## Referenzen
+# Referenzen
 
 Eine Referenz ist ein Pointer, der auf ein bestimmtes Objekt zeigt. Wird ein Objekt erstellt, wird eine Referenz erstellt, die auf das Object zeigt.
 Weisst man nun dem gleichen Objekt ein andere Variabel zu sind dies voneinander abhängig.

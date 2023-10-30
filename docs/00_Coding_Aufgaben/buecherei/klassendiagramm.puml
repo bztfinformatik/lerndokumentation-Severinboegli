@@ -1,0 +1,28 @@
+@startuml
+
+class Kunde {
+    - name : String
+    - buecherAusgeliehen : Buch[]
+
+    + getName() : String
+    + setName(String name) : void
+    + ListeAusgeben : Buch[]
+    + BuchLeihen(Buch buch) : void
+    + BuchZurueckgeben(Buch buch) : void
+}
+
+class Buch {
+    - titel : String 
+    - ausgeliehen : Boolean = false
+
+    + ausleihen() : void
+    + zurueck() : void
+
+    + getStatus() : Boolean
+    + setTitel(String titel) : void
+    + getTitel() : String
+}
+
+Kunde "0..1" <--> "0..n" Buch : leiht >
+
+@enduml

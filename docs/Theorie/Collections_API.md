@@ -1,4 +1,4 @@
-# JAVA Theorie {docsify-ignore-all}
+# JAVA Theorie
 
 ## Collections API
 
@@ -24,7 +24,7 @@ Eine Gemeinsamkeit, die alle Collections haben, ist, dass sie alle Daten speiche
 
 Aufgrund dieser Kriterien kann nun entschieden werden welche Collections verwendet werden sollten. Dies können je nach Anwendung auch verschiedene Collections sein.
 
-### ArrayList
+## ArrayList
 
 
 Eine ArrayList ist sehr verwandt mit einem normalen Array. Im Unterschied dazu, ist eine Arrayliste dynamisch erweiterbar. Will man, dass die Daten sortiert sind und in der Reihenfolge aufgerufen werden, macht eine Arraylist Sinn. In einer ArrayList werden die Daten normal in einer Array gespeichert.
@@ -48,7 +48,7 @@ for (int i = 0; i < cars.size; i++) {
 }
 ```
 
-### LinkedList
+## LinkedList
 
 Eine LinkedList ist sehr ähnlich zu einer ArrayList. Beide basieren auf eine List, weshalb auch beide die die gleichen Methoden haben. Im Gegensatz zu einer ArrayList werden in einer LinkedList die Daten in einem Container gespeichert, der auf einen weiteren Contrainer verlinkt. Man sollte eine LinkedList verwendet, wenn man oft *Daten manipulieren* möchte.
 
@@ -71,7 +71,7 @@ for (int i = 0; i < cars.size; i++) {
 }    
 ```
 
-### HashMap
+## HashMap
 
 Eine HashMap werden Werte immer mit einem Schlüssel zusammen gespeichert. Dies ermöglicht, dass man mit dem Schlüssel den Wert abrufen kann. Ein Key und Value zusammen ergeben ein Pair.
 
@@ -101,7 +101,7 @@ for (String i : voci.keySet()) {
 }
 ```
 
-### TreeMap
+## TreeMap
 Ein TreeMap ist sehr ähnlich wie ein HashMap, im Unterschied zu einer HashMap wird bei einer TreeMap der Wert nicht in einem Hashtable gespeichert sondern in einem Binärbaum. Dies ermöglicht, dass die Werte in einer TreeMap sortiert sind. Eine TreeMap kann verwendet werden, wenn die Werte sortiert und spezifisch abgerufen werden müssen.
 
 **Syntax:**
@@ -136,7 +136,7 @@ TreeMap<String, Integer> number = new TreeMap<>();
 Wichtig zu erwähnen ist es, dass eine TreeMap die Element in alphabetischer Reihenfolge ordnet. Dies kann beim Abrufen praktisch sein.
 
 
-### HashSet
+## HashSet
 Eine Set wird benutzt, wenn ein Wert nur einmal vorkommen darf. Im Unterschied zu einer LinkedHashSet werden die Werte in einer HashSet in einer zufälligen Reihenfolge gespeichert.
 
 **Syntax:**
@@ -159,7 +159,7 @@ for (String i : cars) {
 }
 ```
 
-### Unterschied HashSet, LinkedHashSet & TreeSet
+## Unterschied HashSet, LinkedHashSet & TreeSet
 Ein HashSet, ein LinkedHashSet und eine TreeSet sind zwar alle ein Set, also ein Wert kann nur einmal gespeichert werden, jedoch unterscheiden sie sich, wie der Wert gespeichert wird.
 
 * **HashSet:** Ein HashSet speichert die Werte in zufälliger Reihenfolge, da er beim Abruf mit Hilfe des Keys darauf zugreift.

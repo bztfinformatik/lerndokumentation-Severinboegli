@@ -1,6 +1,4 @@
-# JAVA Theorie {docsify-ignore-all}
-
-## Singleton
+# Singleton
 
 
 Wenn man von einem Singleton Pattern spricht, wird festgelegt, dass nur ein Objekt von einer Klasse erstellt werden darf. Im Singleton wird überprüft, ob das Objekt bereits existiert, falls bereits ein Objekt exisitert, wird das bereits erstellte Objekt übergeben.
@@ -9,7 +7,7 @@ Wenn man von einem Singleton Pattern spricht, wird festgelegt, dass nur ein Obje
 
 ![Darstellung Singelton](singleton.jpg)
 
-### Einfache Anwendung
+## Einfache Anwendung
 
 > Meiner Meinung nach die einfachste Anwendung für Singleton (Lazy Instantiation)
 

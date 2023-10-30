@@ -1,9 +1,4 @@
-# JAVA Theorie {docsify-ignore-all}
-
-In diesem Abschnitt wird alles rund um Java beschrieben. Es werden wichtige Java Funktionen und Basics dokumentiert.
-
-
-## Metoden
+# Metoden
 
 Methoden werden benutzt um Parameter kontrolliert verändern zu können. Ebenfalls kann mit einer Funktion ein Event ausgeführt werden, der als Konsequenz eine Veränderung beim Programm bewirkt.
 

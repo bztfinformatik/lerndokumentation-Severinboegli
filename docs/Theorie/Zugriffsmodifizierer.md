@@ -1,8 +1,4 @@
-# JAVA Theorie {docsify-ignore-all}
-
-In diesem Abschnitt wird alles rund um Java beschrieben. Es werden wichtige Java Funktionen und Basics dokumentiert.
-
-## Zugriffsmodifizierer
+# Zugriffsmodifizierer
 
 Ein Zugriffsmodifizierer beschreibt, von wo eine Funktion oder ein Attribut erreichbar ist. Eine Person sollte nicht immer in der Lage sein eine Variabel zu verändern, was zur Folge haben kann, dass der Wert in der Variabel gar nicht möglich seien darf. Mit Zugriffsmodifizierern kann man definieren welche Funktionen und Variabel auch in anderen Klassen verfügbar sein soll oder nicht.
 
@@ -14,7 +10,7 @@ Es gibt vier verschiedene Arten von Zugriffsmodifizierern:
 
 ![Zugriffsmodifizierer](Zugriffsmodifizierer.jpeg)
 
-### Anwendung
+## Anwendung
 
 > public wird meistens Funktionen zugewiesen, die etwas verändern oder abrufen
 

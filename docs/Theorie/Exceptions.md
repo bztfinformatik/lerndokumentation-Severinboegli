@@ -1,11 +1,9 @@
-# JAVA Theorie {docsify-ignore-all}
-
-## Exceptions
+# Exceptions
 
 ![Exception](exceptions.webp)
 
 
-### Unterschied Exception und Error
+## Unterschied Exception und Error
 Eine Exception ist im Unterschied zu einem Error ein Fehler, der abgefangen werden kann und mit dem das Program weiterlaufen kann. Tritt ein Error auf, so kann das Programm meistens nicht weiterlaufen und wird beendet, da Java-Runtime-Environment (JRE) nicht mehr funktioniert.
 
 Nun ist es wichtig, das man die verschiedenen Exception unterschiedlich abfangen kann, damit man dem User eine möglichst genaue Fehlermeldung geben kann.

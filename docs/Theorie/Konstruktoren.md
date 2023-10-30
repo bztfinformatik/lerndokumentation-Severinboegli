@@ -1,8 +1,4 @@
-# JAVA Theorie {docsify-ignore-all}
-
-In diesem Abschnitt wird alles rund um Java beschrieben. Es werden wichtige Java Funktionen und Basics dokumentiert.
-
-## Konstruktor
+# Konstruktor
 
 Ein Konstruktor gibt vor, was beim Erstellen eines Objekts angepasst wird. Der Konstruktor muss immer **gleich wie die Klasse** heissen.
 

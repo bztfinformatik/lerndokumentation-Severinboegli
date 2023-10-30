@@ -1,4 +1,4 @@
-# Git Theorie {docsify-ignore-all}
+# Git Theorie
 
 In diesem Abschnitt wird alles rund um Java beschrieben. Es werden wichtige Java Funktionen und Basics dokumentiert.
 

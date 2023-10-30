@@ -1,4 +1,4 @@
-# JAVA Theorie {docsify-ignore-all}
+# JAVA Theorie
 
 ## Assoziationen
 
@@ -379,7 +379,54 @@ public class MainVaki
 </details>
 
 
+```plantuml
+
+@startuml
+
+
+    class Vater {
+        - refKind : Kind
+        - alterVater : int
+        ---
+        + setIhrKind(Kind refKind) : void
+        + getIhrKind() : Kind
+        + setAlterVater(int alterVater) : void
+        + getAlterVater() : int
+    }
+
+    class Kind {
+        - refVater : Vater
+        - geburtsJahr : int
+        ---
+        + setSeinenVater(Vater refVater) : void
+        + getSeinenVater() : Vater
+    }
+
+    Vater "1 " <--> "1 " Kind
+
+@enduml
+```
+
 
 ### Konsolenausgabe
 
 ![Assoziationen](Assoziationen.png)
+
+## Verschiedene Beziehungen
+
+**Assoziation:**
+Allg. eine Beziehung, kann uni- oder bidirektional sein.
+
+**Aggregation:**
+eine spezielle Assoziation - Teile/Ganzes-Hierarchie
+
+**Komposition:**
+eine spezielle Assoziation, strenger als Assoziation - Teile/Ganzes Hierarchie, wobei Teile existenziell vom Ganzen abhängig sind
+
+### Richtig unterscheiden
+
+Man kann jedes Software-Projekt grundsätzlich mit den folgenden Fällen durchleuchten:
+1. “IST EIN” -Beziehung => Vererbung (kommt im nächsten Semester)
+2. “NUTZT EIN” - Beziehung => Assoziation
+3. “HAT EIN” - Beziehung => Aggregation
+4. “IST TEIL VON” -Beziehung => Komposition
