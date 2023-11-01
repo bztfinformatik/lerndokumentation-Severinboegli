@@ -11,4 +11,4 @@ In diesem Abschnitt wird alles rund um Java beschrieben. Es werden wichtige Java
 * [Javadoc](Theorie/Javadoc.md)
 * [Exceptions](Theorie/Exceptions.md)
 * [Collections API](Theorie/Collections_API.md)
-* [Assoziationen](Theorie/Assoziationen.md)
+* [Beziehungen](Theorie/Beziehungen.md)

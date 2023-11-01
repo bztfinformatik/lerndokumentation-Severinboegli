@@ -1,12 +1,13 @@
 # Inhalte zum Tag 10
 
 ## Tätigkeiten
-Wir haben heute die Hausaufgaben von der letzten Lektion besprochen. Es ging um Assoziationen zur Aufgabe MuKi.
+Wir haben heute die Hausaufgaben von der letzten Lektion besprochen. Es ging um Assoziationen zur Aufgabe MuKi. Ausserdem habe ich die Aufgabe zur Bücherei gemacht.
 
 ## Theorie
-Ich habe den Eintrag zu Assoziationen, respektive Beziehungen erweitert.
+Ich habe den Eintrag zu Assoziationen, respektive Beziehungen erweitert. Die 
 
-- [Assoziationen](Theorie/Assoziationen.md)
+- [Beziehungen](Theorie/Beziehungen.md)
+- [Aggregation](Theorie/Beziehungen.md)
 
 ## Praxisaufgabe
 Als Praxisaufgabe habe ich die Bücherei Aufgabe gemacht.
@@ -142,3 +143,144 @@ public class Kunde {
 
 
 ```
+
+
+**Auftrag 4:**
+
+```java
+package com.severinboegli;
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Kunde[] kunden = new Kunde[5];
+        for (int i = 0; i < kunden.length; i++) {
+            kunden[i] = new Kunde();
+        }
+
+        // Namen der Kunden setzen
+        kunden[0].setName("Hans");
+        kunden[1].setName("Peter");
+        kunden[2].setName("Urs");
+        kunden[3].setName("Nina");
+        kunden[4].setName("Helene");
+
+        Buch[] buecher = new Buch[16];
+        for (int i = 0; i < buecher.length; i++) {
+            buecher[i] = new Buch();
+        }
+
+        // Titel der Bücher setzen
+        buecher[0].setTitel("Der Herr der Ringe");
+        buecher[1].setTitel("Der kleine Prinz");
+        buecher[2].setTitel("Harry Potter");
+        buecher[3].setTitel("Der Alchimist");
+        buecher[4].setTitel("Der Name der Rose");
+        buecher[5].setTitel("Der Medicus");
+        buecher[6].setTitel("Der Vorleser");
+        buecher[7].setTitel("Der Schatten des Windes");
+        buecher[8].setTitel("Der Schwarm");
+        buecher[9].setTitel("Der Pate");
+        buecher[10].setTitel("Der Fänger im Roggen");
+        buecher[11].setTitel("Der Graf von Monte Christo");
+        buecher[12].setTitel("Der Hobbit");
+        buecher[13].setTitel("Der Zauberberg");
+        buecher[14].setTitel("Der Steppenwolf");
+        buecher[15].setTitel("Der Prozess");     
+
+
+        // Ausleihen
+        kunden[0].BuchLeihen(buecher[0]);
+        kunden[0].BuchLeihen(buecher[1]);
+        kunden[0].BuchLeihen(buecher[2]);
+        kunden[0].BuchLeihen(buecher[3]);
+
+        kunden[1].BuchLeihen(buecher[0]);
+        kunden[1].BuchLeihen(buecher[4]);
+
+        // Ausgeliehen Bücher anzeigen
+        System.out.println("Ausgeliehene Bücher:");
+        for (Kunde kunde : kunden) {
+            kunde.ListeAusgeben();
+        }
+
+
+    }
+}
+```
+
+Hier wurden Bücher instanziert. Die Bücher wurden dann den Kunden zugewiesen. Die Kunden haben dann die Bücher ausgeliehen.
+
+> Die Arrays sind vom Typ Buch und Kunde. Es wurde ein Array für alle Bücher und ein Array für alle Kunden erstellt.
+
+
+**Auftrag 5:**
+
+```java
+
+package com.severinboegli;
+
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+
+        ArrayList<Kunde> kunden = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            kunden.add(new Kunde());
+        }
+
+        // Namen der Kunden setzen
+        kunden.get(0).setName("Hans");
+        kunden.get(1).setName("Peter");
+        kunden.get(2).setName("Urs");
+        kunden.get(3).setName("Nina");
+        kunden.get(4).setName("Helene");
+
+        ArrayList<Buch> buecher = new ArrayList<>();
+        for (int i = 0; i < 16; i++) {
+            buecher.add(new Buch());
+        }
+
+        // Titel der Bücher setzen
+        buecher.get(0).setTitel("Der Herr der Ringe");
+        buecher.get(1).setTitel("Der kleine Prinz");
+        buecher.get(2).setTitel("Harry Potter");
+        buecher.get(3).setTitel("Der Alchimist");
+        buecher.get(4).setTitel("Der Name der Rose");
+        buecher.get(5).setTitel("Der Medicus");
+        buecher.get(6).setTitel("Der Vorleser");
+        buecher.get(7).setTitel("Der Schatten des Windes");
+        buecher.get(8).setTitel("Der Schwarm");
+        buecher.get(9).setTitel("Der Pate");
+        buecher.get(10).setTitel("Der Fänger im Roggen");
+        buecher.get(11).setTitel("Der Graf von Monte Christo");
+        buecher.get(12).setTitel("Der Hobbit");
+        buecher.get(13).setTitel("Der Zauberberg");
+        buecher.get(14).setTitel("Der Steppenwolf");
+        buecher.get(15).setTitel("Der Prozess");
+
+
+        // Ausleihen
+        kunden.get(0).BuchLeihen(buecher.get(0));
+        kunden.get(0).BuchLeihen(buecher.get(1));
+        kunden.get(0).BuchLeihen(buecher.get(2));
+        kunden.get(0).BuchLeihen(buecher.get(3));
+
+        kunden.get(1).BuchLeihen(buecher.get(4));
+        kunden.get(1).BuchLeihen(buecher.get(0));
+
+        // Ausgeliehen Bücher anzeigen
+        for (Kunde kunde : kunden) {
+            kunde.ListeAusgeben();   
+        }
+
+    }
+}
+```
+
+Dies ist die neue Version mit ArrayLists. Die ArrayLists sind dynamisch und können erweitert werden. Es wurde ein Array für alle Bücher und ein Array für alle Kunden erstellt.
+> Elemente in der Arrayliste hinzufügen: `arrayList.add(element);` <br>
+> Elemente in der Arrayliste entfernen: `arrayList.remove(element);` <br>
+> Elemente in der Arrayliste ausgeben: `arrayList.get(index);` <br>
+> Anzahl Elemente in der Arrayliste: `arrayList.size();`

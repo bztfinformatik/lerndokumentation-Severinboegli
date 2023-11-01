@@ -1,8 +1,20 @@
 # JAVA Theorie
 
-## Assoziationen
+## Assoziationen (Beziehung)
 
-Eine Assoziation ist eine Beziehung zwischen zwei Klassen. Diese Beziehung kann einseitig oder beidseitig sein. Es gibt 1 zu 1, 1 zu n und n zu n Beziehungen. Entsteht eine n zu n Beziehung muss eine weitere Klasse eingefügt werden, damit man diese gut ausprogrammieren kann. Dies mach vor allem Sinn weil man später die Daten in eine Datenbank speichern kann.
+Assoziationen sind Beziehungen zwischen zwei Klassen. Diese Beziehung kann einseitig oder beidseitig sein. Es gibt 1 zu 1, 1 zu n und n zu n Beziehungen. Entsteht eine n zu n Beziehung muss eine weitere Klasse eingefügt werden, damit man diese gut ausprogrammieren kann. Dies mach vor allem Sinn weil man später die Daten in eine Datenbank speichern kann.
+
+### Verschiedene Arten von Beziehungen
+
+Man kann jedes Software-Projekt grundsätzlich mit den folgenden Fällen durchleuchten:
+1. “IST EIN” -Beziehung => Vererbung (kommt im nächsten Semester)
+2. “NUTZT EIN” - Beziehung => Assoziation
+3. “HAT EIN” - Beziehung => Aggregation
+4. “IST TEIL VON” -Beziehung => Komposition
+
+## Assoziation
+
+Eine Assoziation ist eine allgemeine Beziehung, die uni- oder bidriektional seinen kann.
 
 > Assoziation bedeutet "Nutzen" oder "Verwenden"
 > Ein Gast nutzt ein Zimmer
@@ -97,11 +109,11 @@ end note
 </details>
 
 
-## Navigierbarkeit
+### Navigierbarkeit
 
 Es gibt verschiedene Arten von Navigierbarkeiten. Zum einen gibt es die **unidirektionale Beziehung** und zum anderen die **bidirektionale Beziehung**. Eine unidirektionale Beziehung ist eine Beziehung die nur in eine Richtung geht. Eine bidirektionale Beziehung ist eine Beziehung die in beide Richtungen geht.
 
-### Beispiel unidirektionale Beziehung:
+**Beispiel unidirektionale Beziehung:**
 
 ```plantuml
 
@@ -163,7 +175,7 @@ Buchung  x-->  Gast
 </details>
 
 
-### Beispiel Bidirektionale Beziehung:
+**Beispiel Bidirektionale Beziehung:**
 
 ```plantuml
 
@@ -232,9 +244,7 @@ Zimmer "1" <--> "1"  Gast
 
 Man kann zwei Väter einem Kind zuweisen, da die Vater und Kind Klasse nicht direkt voneinander abhängig ist. Diese Klassen können zwar miteinander hinterlegt werden, jedoch können wie immer bei [Referenzen](Theorie/Referenzen_Vergleich?id=referenzen) mehrere Elemente auf ein Element verlinken.
 
-## Praxisaufgabe vom Skript
-
-### Klassen
+### Praxisaufgabe vom Skript**
 
 <details>
   <summary><b>Vater.java Klasse anzeigen.</b></summary>
@@ -407,26 +417,142 @@ public class MainVaki
 @enduml
 ```
 
+<details>
+  <summary><b>Hier Klicken um den Code von PlantUML anzuzeigen.</b></summary>
+
+  ```
+
+@startuml
+
+
+    class Vater {
+        - refKind : Kind
+        - alterVater : int
+        ---
+        + setIhrKind(Kind refKind) : void
+        + getIhrKind() : Kind
+        + setAlterVater(int alterVater) : void
+        + getAlterVater() : int
+    }
+
+    class Kind {
+        - refVater : Vater
+        - geburtsJahr : int
+        ---
+        + setSeinenVater(Vater refVater) : void
+        + getSeinenVater() : Vater
+    }
+
+    Vater "1 " <--> "1 " Kind
+
+@enduml
+```
+
+</details>
+
+
 
 ### Konsolenausgabe
 
 ![Assoziationen](Assoziationen.png)
 
-## Verschiedene Beziehungen
+## Aggregation
 
-**Assoziation:**
-Allg. eine Beziehung, kann uni- oder bidirektional sein.
+Eine Aggregation ist eine spezielle Form von einer Beziehung. Zwei Objekte haben eine Beziehung zueinander, jedoch können die Objekte auch ohne Beziehung zueinander existieren.
 
-**Aggregation:**
-eine spezielle Assoziation - Teile/Ganzes-Hierarchie
+> Aggregation bedeutet "Zusammenfassung" oder "Gesamtheit"
+> Bei Aggregation spricht man von *HAT EIN*
 
-**Komposition:**
+Bei einer Aggregation gehört also immer ein Teil zu etwas Ganzem dazu. Zum Beispiel hat eine Bücherei ein Buch. Das Buch kann aber auch ohne die Bücherei existieren. Die Bücherei kann auch ohne das Buch existieren. Es ist also eine lose Beziehung.
+
+```plantuml
+
+class Buch {
+    - titel : String
+    - erscheinungsjahr: int
+
+    + setTitel(String titel) : void
+    + getTitel() : String
+}
+
+class Buechereich {
+    - name : String
+    - ort : String
+    - baujahr : int
+
+    + setName(String name) : void
+    + getName() : String
+}
+
+Buch "0--*" --o "1" Buechereich
+
+class Messer {
+    - material : String
+    - messerID : double
+}
+
+class Gabel {
+    - material : String
+    - gabelID : int
+}
+
+class Besteck {
+    - besteckID : int
+}
+
+Messer "0--*" --o "1" Besteck
+Gabel "0--*" --o "1" Besteck
+```
+
+<details>
+  <summary><b>Hier Klicken um den Code von PlantUML anzuzeigen.</b></summary>
+
+  ```
+
+class Buch {
+    - titel : String
+    - erscheinungsjahr: int
+
+    + setTitel(String titel) : void
+    + getTitel() : String
+}
+
+class Buechereich {
+    - name : String
+    - ort : String
+    - baujahr : int
+
+    + setName(String name) : void
+    + getName() : String
+}
+
+Buch "0--*" --o "1" Buechereich
+
+class Messer {
+    - material : String
+    - messerID : double
+}
+
+class Gabel {
+    - material : String
+    - gabelID : int
+}
+
+class Besteck {
+    - besteckID : int
+}
+
+Messer "0--*" --o "1" Besteck
+Gabel "0--*" --o "1" Besteck
+```
+
+</details>
+
+
+
+*Dies sind zwei Beispiele wie eine Aggregation angewendet werden kann.*
+
+
+## Komposition
 eine spezielle Assoziation, strenger als Assoziation - Teile/Ganzes Hierarchie, wobei Teile existenziell vom Ganzen abhängig sind
 
-### Richtig unterscheiden
-
-Man kann jedes Software-Projekt grundsätzlich mit den folgenden Fällen durchleuchten:
-1. “IST EIN” -Beziehung => Vererbung (kommt im nächsten Semester)
-2. “NUTZT EIN” - Beziehung => Assoziation
-3. “HAT EIN” - Beziehung => Aggregation
-4. “IST TEIL VON” -Beziehung => Komposition

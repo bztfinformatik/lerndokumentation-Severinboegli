@@ -18,7 +18,7 @@ public class Kunde {
                 if (buecherAusgeliehen[i] == null) {
                     buecherAusgeliehen[i] = buch;
                     buch.ausleihen();
-                    break;
+                    return;
                 }
             }
 
@@ -43,7 +43,7 @@ public class Kunde {
             if (buecherAusgeliehen[i] == buch) {
                 buecherAusgeliehen[i] = null;
                 buch.zurueck();
-                break;
+                return;
             }
 
             System.out.println("Das Buch konnte nicht beim Kunde gefunden werden.");
