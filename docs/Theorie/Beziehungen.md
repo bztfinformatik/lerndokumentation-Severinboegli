@@ -14,7 +14,7 @@ Man kann jedes Software-Projekt grundsätzlich mit den folgenden Fällen durchle
 
 ## Assoziation
 
-Eine Assoziation ist eine allgemeine Beziehung, die uni- oder bidriektional seinen kann.
+Eine Assoziation ist eine allgemeine Beziehung, die uni- oder bidirektional seinen kann.
 
 > Assoziation bedeutet "Nutzen" oder "Verwenden"
 > Ein Gast nutzt ein Zimmer
@@ -554,5 +554,6 @@ Gabel "0--*" --o "1" Besteck
 
 
 ## Komposition
-eine spezielle Assoziation, strenger als Assoziation - Teile/Ganzes Hierarchie, wobei Teile existenziell vom Ganzen abhängig sind
+eine spezielle Assoziation, strenger als Assoziation - Teile/Ganzes Hierarchie, wobei Teile existenziell vom Ganzen abhängig sind.
 
+x

@@ -1,0 +1,22 @@
+@startuml
+
+class PC {
+    - verweisAufDisk : Disk
+    ---
+    + diskWechseln(Disk aDisk) : void
+    + PC(Disk vaufDisk) : void
+
+}
+
+class Disk {
+    - eingebaut : Boolean
+    ---
+    + einbau() : void
+    + ausbau() : void
+    + getStatus() : Boolean
+
+}
+
+PC "0..1" o-- "0..1" Disk
+
+@enduml
