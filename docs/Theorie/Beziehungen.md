@@ -8,9 +8,9 @@ Assoziationen sind Beziehungen zwischen zwei Klassen. Diese Beziehung kann einse
 
 Man kann jedes Software-Projekt grundsätzlich mit den folgenden Fällen durchleuchten:
 1. “IST EIN” -Beziehung => Vererbung (kommt im nächsten Semester)
-2. “NUTZT EIN” - Beziehung => Assoziation
-3. “HAT EIN” - Beziehung => Aggregation
-4. “IST TEIL VON” -Beziehung => Komposition
+2. “NUTZT EIN” - Beziehung => [Assoziation](#assoziation)
+3. “HAT EIN” - Beziehung => [Aggregation](#aggregation)
+4. “IST TEIL VON” -Beziehung => [Komposition](#komposition)
 
 ## Assoziation
 
@@ -554,6 +554,64 @@ Gabel "0--*" --o "1" Besteck
 
 
 ## Komposition
-eine spezielle Assoziation, strenger als Assoziation - Teile/Ganzes Hierarchie, wobei Teile existenziell vom Ganzen abhängig sind.
+Im Vergleich zu einer Aggregation ist eine Komposition strenger und die einzelnen Teile existieren wobei sie vom Ganzen abhängig sind.
 
-x
+> Komposition bedeutet "Zusammensetzung"
+> Man sagt auch "IST TEIL VON"
+
+### Unterschied zu Aggregation
+ - Kordinalität auf der "Ganz-Seite" kann nur 1 sein
+ - Das Objekt wurde nur genau für das Ganze Objekt erstellt (also z.B. ein Raum für ein spezifisches Haus).
+
+Das Kompositionszeichen sieht sehr ähnlich aus wie das Aggregtionszeichen im Plantuml. Der Unterschied ist, dass das Kompositionszeichen ein ausgefülltes Dreieck hat.
+
+```plantuml
+class Zimmer{
+    - zimmerNr : int
+    - zimmerName : String
+    - zimmerPreis : double
+}
+
+class Haus{
+    - hausNr : int
+    - hausName : String
+    - hausPreis : double
+}
+
+class Auto{
+    - autoNr : int
+    - autoName : String
+    - autoPreis : double
+}
+
+Zimmer "0...n" --* "1" Haus : Komposition
+Auto "0...n" --o "1" Haus : Aggregation
+```
+
+<details>
+  <summary><b>Hier Klicken um den Code von PlantUML anzuzeigen.</b></summary>
+
+```
+class Zimmer{
+    - zimmerNr : int
+    - zimmerName : String
+    - zimmerPreis : double
+}
+
+class Haus{
+    - hausNr : int
+    - hausName : String
+    - hausPreis : double
+}
+
+class Auto{
+    - autoNr : int
+    - autoName : String
+    - autoPreis : double
+}
+
+Zimmer "0...n" --* "1" Haus : Komposition
+Auto "0...n" --o "1" Haus : Aggregation
+```
+
+</details>

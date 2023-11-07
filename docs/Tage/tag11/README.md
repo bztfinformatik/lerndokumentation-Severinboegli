@@ -1,12 +1,12 @@
 # Inhalte zum Tag 11
 
 ## Tätigkeiten
-Heute haben wir die G-Prüfung besprochen.
+Heute haben wir die G-Prüfung besprochen. Ausserdem haben wir den Unterschied von Assoziation, Aggregation und Komposition kennengelernt. Ich habe die Theorie dazu in der Theorie Sektion aufgeschrieben. Erweitert wurde der Komositionen-Teil.
 
 ## Theorie
 
 - [Beziehungen](Theorie/Beziehungen.md)
-- [Aggregation](Theorie/Beziehungen.md)
+- [Komposition](Theorie/Beziehungen.md#Komposition)
 
 ## Praxisaufgabe
 
