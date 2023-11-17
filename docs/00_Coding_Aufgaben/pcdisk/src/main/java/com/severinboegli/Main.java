@@ -12,5 +12,7 @@ public class Main {
         PC pc3 = new PC(hdd);
 
         pc.diskWechseln(nvme);
+        
+        // pc.getDisk().ausbau();
     }
 }

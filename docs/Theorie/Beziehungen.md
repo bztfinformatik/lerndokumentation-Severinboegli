@@ -556,6 +556,8 @@ Gabel "0--*" --o "1" Besteck
 ## Komposition
 Im Vergleich zu einer Aggregation ist eine Komposition strenger und die einzelnen Teile existieren wobei sie vom Ganzen abhängig sind.
 
+Eine Komposition wird mit ```*--``` gezeichnet.
+
 > Komposition bedeutet "Zusammensetzung"
 > Man sagt auch "IST TEIL VON"
 
