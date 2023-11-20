@@ -3,6 +3,8 @@ package com.severinboegli;
 public class Main {
     public static void main(String[] args) {
         Bankkunde Severin = new Bankkunde();
+
+        
         Severin.setNachname("Boegli");
         Severin.neuesKonto();
 

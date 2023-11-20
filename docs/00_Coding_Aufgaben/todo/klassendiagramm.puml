@@ -1,0 +1,103 @@
+@startuml
+
+class Benutzer {
+    -- Attribute --
+    - id : int
+    - vorname : String
+    - nachname : String
+    - email : String
+    - passwort : String
+    - sharedToDoLists : HashMap<int id, SharedList sharedList>
+
+    -- Getter und Setter --
+    + setId(int id) : void
+    + getId() : int
+    + setVorname(String vorname) : void
+    + getVorname() : String
+    + setNachname(String nachname) : void
+    + getNachname() : String
+    + setEmail(String email) : void
+    + getEmail() : String
+    
+    -- Methoden --
+    + setPasswort() : void
+    + isPasswortCorrect(String password) : boolean
+    + addSharedList(SharedList sharedList) : void
+    + addSharedList(int id) : void
+    + unlinkSharedList(int id) : void
+}
+
+class SharedList {
+    -- Attribute --
+    - id : int
+    - name : String
+    - beschreibung : String
+    - aufgaben : HashMap<int id, Aufgabe aufgabe>
+    - benutzer : HashMap<int id, Benutzer benutzer>
+
+    -- Getter und Setter --
+    + setId(int id) : void
+    + getId() : int
+    + setName(String name) : void
+    + getName() : String
+    + setBeschreibung(String beschreibung) : void
+    + getBeschreibung() : String
+
+    -- Methoden --
+    + addAufgabe(Aufgabe aufgabe) : void
+    + addAufgabe(int id) : void
+    + removeAufgabe(int id) : void
+    + addBenutzer(Benutzer benutzer) : void
+    + removeBenutzer(int id) : void
+    + getBenutzer() : HashMap
+}
+
+class Aufgabe {
+    -- Attribute --
+    - id : int
+    - name : String
+    - beschreibung : String
+    - prioritaet : int
+    - status : Enum
+    - bild : Bild
+
+    -- Getter und Setter --
+    + setId(int id) : void
+    + getId() : int
+    + setName(String name) : void
+    + getName() : String
+    + setBeschreibung(String beschreibung) : void
+    + getBeschreibung() : String
+    + setPrioritaet(int prioritaet) : void
+    + getPrioritaet() : int
+    + setStatus(Enum status) : void
+    + getStatus() : Enum
+    + setBild(Bild bild) : void
+    + getBild() : Bild
+
+    -- Methoden --
+    + removeBild() : void
+}
+
+class Bild {
+    -- Attribute --
+    - beschreibung : String
+    - pfad : String
+    - hoehe : int
+    - breite : int
+
+    -- Getter und Setter --
+    + setBeschreibung(String beschreibung) : void
+    + getBeschreibung() : String
+    + setPfad(String pfad) : void
+    + getPfad() : String
+    + setHoehe(int hoehe) : void
+    + getHoehe() : int
+    + setBreite(int breite) : void
+    + getBreite() : int
+}
+Benutzer "1...4" <--> "0...2" SharedList
+SharedList "1" *-- "0...n" Aufgabe
+Aufgabe "1" *-- "1" Bild
+
+@enduml
