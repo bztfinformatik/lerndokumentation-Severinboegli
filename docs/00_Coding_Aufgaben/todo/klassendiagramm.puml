@@ -8,9 +8,15 @@ class Benutzer {
     - email : String
     - passwort : String
     - sharedToDoLists : HashMap<int id, SharedList sharedList>
+    - scanner : Scanner
+    - {static} userCounter : int
+
+    -- Konstruktoren --
+    + Benutzer() : void
+    + Benutzer(String vorname, String nachname, String email) : void
 
     -- Getter und Setter --
-    + setId(int id) : void
+    - setId() : void
     + getId() : int
     + setVorname(String vorname) : void
     + getVorname() : String
@@ -21,7 +27,7 @@ class Benutzer {
     
     -- Methoden --
     + setPasswort() : void
-    + isPasswortCorrect(String password) : boolean
+    + isPasswordCorrect(String password) : boolean
     + addSharedList(SharedList sharedList) : void
     + addSharedList(int id) : void
     + unlinkSharedList(int id) : void
@@ -34,9 +40,14 @@ class SharedList {
     - beschreibung : String
     - aufgaben : HashMap<int id, Aufgabe aufgabe>
     - benutzer : HashMap<int id, Benutzer benutzer>
+    -{static} listCounter : int
+
+    -- Konstruktoren --
+    + SharedList() : void
+    + SharedList(String name, String beschreibung) : void
 
     -- Getter und Setter --
-    + setId(int id) : void
+    - setId() : void
     + getId() : int
     + setName(String name) : void
     + getName() : String
@@ -44,12 +55,16 @@ class SharedList {
     + getBeschreibung() : String
 
     -- Methoden --
-    + addAufgabe(Aufgabe aufgabe) : void
-    + addAufgabe(int id) : void
+    + addAufgabe() : void
+    + addAufgabe(String name, String beschreibung, int prioritaet, Status status) : void
+    + addAufgabe(String name, String beschreibung, int prioritaet, Status status, Bild bild) : void
     + removeAufgabe(int id) : void
     + addBenutzer(Benutzer benutzer) : void
     + removeBenutzer(int id) : void
-    + getBenutzer() : HashMap
+    + printAllTasks() : void
+    + printAllUsers() : void
+    + printOutSharedListFull() : void
+    + printOutSharedListUsers() : void
 }
 
 class Aufgabe {
@@ -60,9 +75,15 @@ class Aufgabe {
     - prioritaet : int
     - status : Enum
     - bild : Bild
+    -{static} taskCounter : int
+
+    -- Konstruktoen --
+    + Aufgabe() : void
+    + Aufgabe(String name, String beschreibung, int prioritaet, Status status) : void
+    + Aufgabe(String name, String beschreibung, int prioritaet, Status status, Bild bild) : void
 
     -- Getter und Setter --
-    + setId(int id) : void
+    - setId() : void
     + getId() : int
     + setName(String name) : void
     + getName() : String
@@ -77,6 +98,7 @@ class Aufgabe {
 
     -- Methoden --
     + removeBild() : void
+    + printOutAufgabe() : void
 }
 
 class Bild {
@@ -85,6 +107,10 @@ class Bild {
     - pfad : String
     - hoehe : int
     - breite : int
+
+    -- Konstruktoren --
+    + Bild(String pfad, int breite, int hoehe) : void
+    + Bild(String pfad, int breite, int hoehe, String beschreibung) : void
 
     -- Getter und Setter --
     + setBeschreibung(String beschreibung) : void
