@@ -31,6 +31,9 @@ class Benutzer {
     + addSharedList(SharedList sharedList) : void
     + addSharedList(int id) : void
     + unlinkSharedList(int id) : void
+    + printOutBenutzer() : void
+    + printOutSharedLists() : void
+    + printOutSharedListsDetails() : void
 }
 
 class SharedList {

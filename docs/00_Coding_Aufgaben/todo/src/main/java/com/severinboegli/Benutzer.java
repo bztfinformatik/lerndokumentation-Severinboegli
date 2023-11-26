@@ -34,7 +34,6 @@ public class Benutzer {
         setNachname(nachname);
         setEmail(email);
         setPasswort();
-        
     }
 
     /**
@@ -125,7 +124,7 @@ public class Benutzer {
      * Falls das Password nicht übereinstimmt, muss dies wiederholt werden.
      */
     public void setPasswort() {
-        System.out.println("Bitte geben Sie ein Passwort ein:");
+        System.out.println("Bitte geben Sie ein Passwort ein für den Benutzer " + vorname + " " + nachname + ":");
         String passwort = scanner.nextLine();
         System.out.println("Bitte wiederholen Sie das Passwort:");
         String passwort2 = scanner.nextLine();
@@ -156,7 +155,7 @@ public class Benutzer {
      * Fügt eine neue SharedListe dem Benutzer hinzu. Dies wird gemacht, indem man das Objekt übergibt.
      * @param sharedList gibt an, welche SharedListe hinzugefügt werden soll.
      */
-    public void addSharedList(SharedList sharedList) {
+    protected void addSharedList(SharedList sharedList) {
         sharedToDoLists.put(sharedList.getId() , sharedList);
     }
 
@@ -177,6 +176,41 @@ public class Benutzer {
      */
     public void unlinkSharedList(int id) {
         sharedToDoLists.remove(id);
+    }
+
+    /**
+     * Gibt die Attribute des Benutzers aus. Dies sind die ID, der Vorname, der Nachname, die Email und der Passwort Hash.
+     * Es wird alles in der Konsole ausgegeben.
+     */
+    public void printOutBenutzer() {
+        System.out.println("---------- USER ----------");
+        System.out.println("ID: " + id);
+        System.out.println("Vorname: " + vorname);
+        System.out.println("Nachname: " + nachname);
+        System.out.println("Email: " + email);
+        System.out.println("Passwort Hash: " + passwort.hashCode());
+        System.out.println("--------------------------\n");
+    }
+
+    /**
+     * Gibt alle SharedLists des Benutzers aus. Es werden die ID und der Name der Liste ausgegeben.
+     * Es wird alles in der Konsole ausgegeben.
+     */
+    public void printOutSharedLists() {
+        System.out.println("-- ACCESSABLE LISTS --");
+        for (SharedList accessList : sharedToDoLists.values()) {
+            System.out.println("ID: " + accessList.getId() + " | Name: " + accessList.getName());
+        }
+        System.out.println("----------------------\n");
+    }
+
+    /**
+     * Gibt alle Details des Benutzers aus. Dies sind die Attribute des Benutzers und die SharedLists.
+     */
+    public void printOutSharedListsDetails() {
+        System.out.println("All Details of the User " + vorname + " " + nachname + ":");
+        printOutBenutzer();
+        printOutSharedLists();
     }
     
 }

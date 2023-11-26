@@ -5,25 +5,30 @@ import java.util.HashMap;
 import com.severinboegli.Aufgabe.Status;
 
 /**
- * Definiert die Eigenschaften einer SharedList. Eine SharedList speicher alle Tasks und welche Benutzer Zugriff darauf haben.
+ * Definiert die Eigenschaften einer SharedList. Eine SharedList speicher alle
+ * Tasks und welche Benutzer Zugriff darauf haben.
+ * 
  * @version 1.0
  * @since 2023-11-24
  * @author Severin Bögli
  */
 public class SharedList {
     /**
-     * Nummerierung der SharedList. Durch dies soll jede SharedList eine eindeutige ID erhalten.
+     * Nummerierung der SharedList. Durch dies soll jede SharedList eine eindeutige
+     * ID erhalten.
      */
     private static int listCounter = 1000;
     private int id;
     private String name;
     private String beschreibung;
     /**
-     * HashMap, die alle Tasks der SharedList speichert. Die ID des Tasks wird als Key verwendet.
+     * HashMap, die alle Tasks der SharedList speichert. Die ID des Tasks wird als
+     * Key verwendet.
      */
     private HashMap<Integer, Aufgabe> tasks = new HashMap<Integer, Aufgabe>();
     /**
-     * HashMap, die alle Benutzer der SharedList speichert. Die ID des Benutzers wird als Key verwendet.
+     * HashMap, die alle Benutzer der SharedList speichert. Die ID des Benutzers
+     * wird als Key verwendet.
      */
     private HashMap<Integer, Benutzer> users = new HashMap<Integer, Benutzer>();
 
@@ -40,7 +45,8 @@ public class SharedList {
 
     /**
      * Konstruktor, der eine geteilte Liste erstellt mit den übergebenen Werten.
-     * @param name Name der geteilten Liste, als String
+     * 
+     * @param name         Name der geteilten Liste, als String
      * @param beschreibung Beschreibung der geteilten Liste, als String
      */
     public SharedList(String name, String beschreibung) {
@@ -118,11 +124,14 @@ public class SharedList {
     /**
      * Fügt eine Aufgabe der To-Do-Liste hinzu. Die Aufgabe bekommt eine eindeutige
      * ID, die danach benutzt werden kann um in der HashMap darauf zuzugreifen.
-     * Der Counter wird automatisch erhöht in der Klasse counter. Es werden folgende Parameter übergeben:
-     * @param name Name der Aufgabe als String.
+     * Der Counter wird automatisch erhöht in der Klasse counter. Es werden folgende
+     * Parameter übergeben:
+     * 
+     * @param name         Name der Aufgabe als String.
      * @param beschreibung Beschreibung der Aufgabe als String.
-     * @param prioritaet Priorität der Aufgabe als int.
-     * @param status Status der Aufgabe als enum, der die Werte OPEN, ONGOING oder DONE annehmen kann.
+     * @param prioritaet   Priorität der Aufgabe als int.
+     * @param status       Status der Aufgabe als enum, der die Werte OPEN, ONGOING
+     *                     oder DONE annehmen kann.
      */
     public void addAufgabe(String name, String beschreibung, int prioritaet, Status status) {
         Aufgabe task = new Aufgabe(name, beschreibung, prioritaet, status);
@@ -133,12 +142,16 @@ public class SharedList {
     /**
      * Fügt eine Aufgabe der To-Do-Liste hinzu. Die Aufgabe bekommt eine eindeutige
      * ID, die danach benutzt werden kann um in der HashMap darauf zuzugreifen.
-     * Der Counter wird automatisch erhöht in der Klasse counter. Es werden folgende Parameter übergeben:
-     * @param name Name der Aufgabe als String.
+     * Der Counter wird automatisch erhöht in der Klasse counter. Es werden folgende
+     * Parameter übergeben:
+     * 
+     * @param name         Name der Aufgabe als String.
      * @param beschreibung Beschreibung der Aufgabe als String.
-     * @param prioritaet Priorität der Aufgabe als int.
-     * @param status Status der Aufgabe als enum, der die Werte OPEN, ONGOING oder DONE annehmen kann.
-     * @param bild Bild der Aufgabe, die als Anhang hinzugefügt wird. Es ist ein Objekt der Klasse Bild.
+     * @param prioritaet   Priorität der Aufgabe als int.
+     * @param status       Status der Aufgabe als enum, der die Werte OPEN, ONGOING
+     *                     oder DONE annehmen kann.
+     * @param bild         Bild der Aufgabe, die als Anhang hinzugefügt wird. Es ist
+     *                     ein Objekt der Klasse Bild.
      */
     public void addAufgabe(String name, String beschreibung, int prioritaet, Status status, Bild bild) {
         Aufgabe task = new Aufgabe(name, beschreibung, prioritaet, status, bild);
@@ -148,6 +161,7 @@ public class SharedList {
 
     /**
      * Entfernt Aufgaben von der aktuellen Liste.
+     * 
      * @param id ID der Aufgabe als int
      */
     public void removeAufgabe(int id) {
@@ -156,7 +170,9 @@ public class SharedList {
 
     /**
      * Fügt ein Benutzer der SharedList hinzu. Dies soll eine Freigabe darstellen.
-     * @param benutzer Benutzer, der der Liste übergeben werden soll als Benutzer Objekt.
+     * 
+     * @param benutzer Benutzer, der der Liste übergeben werden soll als Benutzer
+     *                 Objekt.
      */
     public void addBenutzer(Benutzer benutzer) {
         users.put(benutzer.getId(), benutzer);
@@ -164,7 +180,9 @@ public class SharedList {
     }
 
     /**
-     * Entfernt einen Benutzer der SharedList. Dies soll den Zugriff wieder wegnehmen.
+     * Entfernt einen Benutzer der SharedList. Dies soll den Zugriff wieder
+     * wegnehmen.
+     * 
      * @param id ID der Benutzers als int.
      */
     public void removeBenutzer(int id) {
@@ -177,20 +195,27 @@ public class SharedList {
      * Gibt alle Aufgaben der Liste aus mit allen Eigenschaften.
      */
     public void printAllTasks() {
-        System.out.println("Alle Aufgaben der Liste " + name + ":");
-        for (Aufgabe task : tasks.values()) {
-            task.printOutAufgabe();
+        if (!tasks.isEmpty()) {
+            System.out.println("Alle Aufgaben der Liste " + name + ":");
+            for (Aufgabe task : tasks.values()) {
+                task.printOutAufgabe();
+            }
         }
+
     }
 
     /**
-     * Gibt alle Benutzer mit Zugriff auf die Liste aus. Es werden Vorname, Nachname und ID ausgegeben.
+     * Gibt alle Benutzer mit Zugriff auf die Liste aus. Es werden Vorname, Nachname
+     * und ID ausgegeben.
      */
     public void printAllUsers() {
-        System.out.println("Folgende Benutzer haben Zugriff auf die Liste " + name + ":");
-        for (Benutzer user : users.values()) {
-            System.out.println("- " + user.getVorname() + " " + user.getNachname() + " (" + user.getId() + ")");
+        if (!users.isEmpty()) {
+            System.out.println("Folgende Benutzer haben Zugriff auf die Liste " + name + ":");
+            for (Benutzer user : users.values()) {
+                System.out.println("- " + user.getVorname() + " " + user.getNachname() + " (" + user.getId() + ")");
+            }
         }
+
     }
 
     /**
@@ -219,7 +244,5 @@ public class SharedList {
         printAllUsers();
         System.out.println("---------------------------------");
     }
-
-    
 
 }
