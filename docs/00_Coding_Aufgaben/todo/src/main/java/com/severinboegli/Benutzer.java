@@ -88,7 +88,7 @@ public class Benutzer {
 
     /**
      * Setter für den Nachnamen des Benutzers.
-     * @param vorname setzte den Nachnamen des Benutzers als String.
+     * @param nachname setzte den Nachnamen des Benutzers als String.
      */
     public void setNachname(String nachname) {
         this.nachname = nachname;

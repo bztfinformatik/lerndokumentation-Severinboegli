@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.severinboegli","l":"Aufgabe"},{"p":"com.severinboegli","l":"Benutzer"},{"p":"com.severinboegli","l":"Bild"},{"p":"com.severinboegli","l":"Main"},{"p":"com.severinboegli","l":"SharedList"},{"p":"com.severinboegli","l":"Aufgabe.Status"}];updateSearchResults();

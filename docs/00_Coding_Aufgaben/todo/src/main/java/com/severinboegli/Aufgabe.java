@@ -20,9 +20,22 @@ public class Aufgabe {
      * 5 => nicht wichtig
      */
     private int prioritaet;
+
+    /**
+     * Status der Aufgabe. Es gibt drei verschiedene Status: OPEN, ONGOING oder DONE.
+     */
     public static enum Status {
+        /**
+         * Status der Aufgabe, wenn diese noch nicht begonnen wurde.
+         */
         OPEN,
+        /**
+         * Status der Aufgabe, wenn diese begonnen wurde, aber noch nicht abgeschlossen ist.
+         */
         ONGOING,
+        /**
+         * Status der Aufgabe, wenn diese abgeschlossen wurde.
+         */
         DONE
     }
     private Status status;
@@ -128,7 +141,7 @@ public class Aufgabe {
     }
 
     /**
-     * Setter für die Priorität der Aufgabe. Die Skala liegt zwischen 1 & 5.
+     * Setter für die Priorität der Aufgabe. Die Skala liegt zwischen 1 und 5.
      * @param prioritaet Priorität der Aufgabe als int.
      * 1 => sehr wichtig
      * 5 => nicht wichtig
@@ -139,7 +152,7 @@ public class Aufgabe {
     }
 
     /**
-     * Getter, der die Priorität der Aufgabe setzt. Die Skala ist zwischen 1 & 5.
+     * Getter, der die Priorität der Aufgabe setzt. Die Skala ist zwischen 1 und 5.
      * @return gib die Priorität der Aufgabe als int zurück.
      */
     public int getPrioritaet() {

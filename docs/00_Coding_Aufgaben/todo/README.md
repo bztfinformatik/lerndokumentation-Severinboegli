@@ -8,3 +8,8 @@ Es soll vier Klassen geben:
   - Aufgaben (Name, Beschreibung, Priorität, Status, Bild)
   - Bilder (Beschreibung, Pfad, Format)
 
+Machen:
+
+- Klassendiagramm
+- Sequenzdiagramm
+- Aktivitätsdiagramm

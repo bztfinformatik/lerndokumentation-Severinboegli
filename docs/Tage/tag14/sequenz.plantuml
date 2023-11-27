@@ -1,0 +1,36 @@
+@startuml
+!theme aws-orange
+
+participant Main
+participant Videothek
+participant User
+
+activate Main
+
+Main --> Videothek : login(kundennummer, passwort)
+
+activate Videothek
+
+Videothek --> Videothek : getKunde(kundennummer) : Kunde
+
+break Kunde == null
+Videothek --> Main : meldeAbbruch()
+end
+
+Videothek --> User : pruefePwd(password) : boolean
+activate User
+User --> Videothek: ergebnis, boolean
+deactivate User
+
+break falsches Passwort
+User --> Videothek : pruefePwd(password) --> false
+Videothek --> Main : melde Abbruch
+end
+
+deactivate Videothek
+
+Videothek --> Main : melde Anmeldung
+
+deactivate Main
+
+@enduml

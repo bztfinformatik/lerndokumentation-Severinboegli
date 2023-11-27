@@ -16,6 +16,10 @@ import com.severinboegli.Aufgabe.Status;
  * @see Bild
  */
 public class Main {
+    /**
+     * Main Methode, welche das Programm startet.
+     * @param args Argumente, welche beim Starten des Programms übergeben werden können.
+     */
     public static void main(String[] args) {
         
         // Erstellt 4 Testbenutzer

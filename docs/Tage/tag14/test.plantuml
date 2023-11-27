@@ -1,0 +1,54 @@
+@startuml
+ 
+class Kunde {
+    - vorname : String
+    - nachname : String
+    - adresse : String
+    - telefonnummer : String
+ 
+    + Kunde(vorname : String, nachname : String, adresse : String, telefonnummer : String)
+    + getVorname() : String
+    + getNachname() : String
+    + getAdresse() : String
+    + getTelefonnummer() : String
+    + setVorname(vorname : String) : void
+    + setNachname(nachname : String) : void
+    + setAdresse(adresse : String) : void
+    + setTelefonnummer(telefonnummer : String) : void
+}
+ 
+class Film {
+    - titel : String
+    - regisseur : String
+    - erscheinungsjahr : int
+    - genre : String
+ 
+    + Film(titel : String, regisseur : String, erscheinungsjahr : int, genre : String)
+    + getTitel() : String
+    + getRegisseur() : String
+    + getErscheinungsjahr() : int
+    + getGenre() : String
+    + setTitel(titel : String) : void
+    + setRegisseur(regisseur : String) : void
+    + setErscheinungsjahr(erscheinungsjahr : int) : void
+ 
+ 
+}
+ 
+class Server {
+    - typ : String
+    - funktion : String
+ 
+    + Server(typ : String, funktion : String)
+}
+ 
+class Videothek {
+    - name : String
+ 
+    + Videothek(name : String)
+    + getName() : String
+    + setName(name : String) : void
+    + addKunde(kunde : Kunde) : void
+    + removeKunde(kunde : Kunde) : void
+}
+@enduml
