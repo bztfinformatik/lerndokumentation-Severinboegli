@@ -1,6 +1,7 @@
 package com.severinboegli;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import com.severinboegli.Aufgabe.Status;
 
@@ -21,6 +22,8 @@ public class Main {
      * @param args Argumente, welche beim Starten des Programms übergeben werden können.
      */
     public static void main(String[] args) {
+        // erstellen von einem Scanner
+        Scanner scanner = new Scanner(System.in);
         
         // Erstellt 4 Testbenutzer
         Benutzer severin = new Benutzer("Severin", "Bögli", "severinboegli@testmail.com");
@@ -33,6 +36,8 @@ public class Main {
         for (int i = 0; i < 10; i++) {
             sharedListListe.add(new SharedList());
         }
+
+        
 
         // Modifizieren der Testlisten mit Aufgaben und Benuztern
         sharedListListe.get(0).setName("Hausaufgabenliste");
@@ -61,19 +66,22 @@ public class Main {
         sharedListListe.get(9).addBenutzer(severin);
         sharedListListe.get(9).addBenutzer(peter);
         sharedListListe.get(9).addBenutzer(max);
+        sharedListListe.get(9).addAufgabe("Buch: Der Herr der Ringe", "Das Buch von J.R.R. Tolkien", 1, Status.ONGOING);
+        sharedListListe.get(9).addAufgabe();
+
+        System.out.println("Solle zwei Tasks zeigen");
+        sharedListListe.get(9).printAllTasks();
+        sharedListListe.get(9).removeAufgabe(10013);
+        
+        System.out.println("Sollte nur noch einen Task zeigen");
+        sharedListListe.get(9).printAllTasks();
+
         sharedListListe.get(9).addAufgabe("Playstation 5", "Die neue Playstation", 1, Status.DONE);
         sharedListListe.get(9).addAufgabe("Xbox Series X", "Die neue Xbox", 1, Status.DONE);
-        sharedListListe.get(9).addAufgabe("Nintendo Switch", "Die neue Nintendo Konsole", 1, Status.OPEN);
-        sharedListListe.get(9).addAufgabe("iPhone 12", "Das neue iPhone", 1, Status.OPEN);
-        sharedListListe.get(9).addAufgabe("Samsung Galaxy S20", "Das neue Samsung Handy", 1, Status.OPEN);
-        sharedListListe.get(9).addAufgabe("Huawei P40", "Das neue Huawei Handy", 1, Status.OPEN);
-        sharedListListe.get(9).addAufgabe("Buch: Der Herr der Ringe", "Das Buch von J.R.R. Tolkien", 1, Status.ONGOING);
-        sharedListListe.get(9).addAufgabe("Buch: Der Hobbit", "Das Buch von J.R.R. Tolkien", 1, Status.ONGOING);
-        sharedListListe.get(9).addAufgabe();
-        sharedListListe.get(9).addAufgabe();
 
 
         // Gibt alles SharedLists aus, alle Benutzer und alle Aufgaben dazu.
+        
         for (SharedList sharedList : sharedListListe) {
             sharedList.printOutSharedListFull();
         }
