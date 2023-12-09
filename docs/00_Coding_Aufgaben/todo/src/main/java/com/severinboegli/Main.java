@@ -24,7 +24,7 @@ public class Main {
     public static void main(String[] args) {
         // erstellen von einem Scanner
         Scanner scanner = new Scanner(System.in);
-        
+
         // Erstellt 4 Testbenutzer
         Benutzer severin = new Benutzer("Severin", "Bögli", "severinboegli@testmail.com");
         Benutzer peter = new Benutzer();
@@ -37,7 +37,7 @@ public class Main {
             sharedListListe.add(new SharedList());
         }
 
-        
+
 
         // Modifizieren der Testlisten mit Aufgaben und Benuztern
         sharedListListe.get(0).setName("Hausaufgabenliste");
@@ -72,16 +72,49 @@ public class Main {
         System.out.println("Solle zwei Tasks zeigen");
         sharedListListe.get(9).printAllTasks();
         sharedListListe.get(9).removeAufgabe(10013);
-        
+
         System.out.println("Sollte nur noch einen Task zeigen");
         sharedListListe.get(9).printAllTasks();
 
         sharedListListe.get(9).addAufgabe("Playstation 5", "Die neue Playstation", 1, Status.DONE);
         sharedListListe.get(9).addAufgabe("Xbox Series X", "Die neue Xbox", 1, Status.DONE);
 
+        /* -----------------------------------
+        * Testbereich
+        * Nun werden alle Methoden der Klassen getestet.
+        * ------------------------------------
+        */
+
+        // Methoden der Klasse Bild:
+        Bild bild1 = new Bild("D:\\Bilder\\Bild1.jpg", 100, 100);
+        Bild bild2 = new Bild("D:\\Bilder\\Bild2.jpg", 200, 200, "Bild 2");
+        bild1.getBeschreibung();
+        bild1.getBreite();
+        bild1.getHoehe();
+        bild1.setBeschreibung("Bild 1");
+        bild1.setBreite(200);
+        bild1.setHoehe(200);
+        bild1.setPfad("D:\\Bilder\\Bild2.jpg");
+
+        // Methoden der KLasse Aufgabe:
+        Aufgabe aufgabe1 = new Aufgabe();
+        aufgabe1.getId();
+        aufgabe1.getBild();
+        aufgabe1.getName();
+        aufgabe1.getBeschreibung();
+        aufgabe1.getPrioritaet();
+        aufgabe1.getStatus();
+        aufgabe1.setBeschreibung("Aufgabe 1");
+        aufgabe1.setBild(bild1);
+        aufgabe1.setName("Aufgabe 1");
+        aufgabe1.setPrioritaet(1);
+        aufgabe1.setStatus(Status.ONGOING);
+
 
         // Gibt alles SharedLists aus, alle Benutzer und alle Aufgaben dazu.
-        
+        System.out.println("====================================================================");
+        System.out.println("Alle SharedLists:");
+        System.out.println("====================================================================");
         for (SharedList sharedList : sharedListListe) {
             sharedList.printOutSharedListFull();
         }
