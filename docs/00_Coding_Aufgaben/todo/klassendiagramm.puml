@@ -24,9 +24,10 @@ class Benutzer {
     + getNachname() : String
     + setEmail(String email) : void
     + getEmail() : String
+    - setPasswort(String passwort) : void
     
     -- Methoden --
-    + setPasswort() : void
+    + enterPassword() : void
     + isPasswordCorrect(String password) : boolean
     + addSharedList(SharedList sharedList) : void
     + addSharedList(int id) : void

@@ -30,6 +30,7 @@ public class Main {
         Benutzer peter = new Benutzer();
         Benutzer max = new Benutzer("Max", "Muster", "max.muster@outlook.de");
         Benutzer moritz = new Benutzer("Moritz", "Müller", "moritz.müller@gmail.com");
+        moritz.enterPasswort();
 
         // Erstellen von 10 Testlisten
         ArrayList<SharedList> sharedListListe = new ArrayList<SharedList>();

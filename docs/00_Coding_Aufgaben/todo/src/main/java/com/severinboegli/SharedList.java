@@ -175,8 +175,13 @@ public class SharedList {
      *                 Objekt.
      */
     public void addBenutzer(Benutzer benutzer) {
-        users.put(benutzer.getId(), benutzer);
+        try {
+            users.put(benutzer.getId(), benutzer);
         benutzer.addSharedList(this);
+        } catch (Exception e) {
+            System.out.println("Benutzer konnte nicht hinzugefügt werden.");
+        }
+        
     }
 
     /**

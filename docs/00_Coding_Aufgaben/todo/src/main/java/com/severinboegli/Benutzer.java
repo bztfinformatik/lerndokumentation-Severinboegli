@@ -33,7 +33,7 @@ public class Benutzer {
         setVorname(vorname);
         setNachname(nachname);
         setEmail(email);
-        setPasswort();
+        setPasswort("1234");
     }
 
     /**
@@ -49,7 +49,7 @@ public class Benutzer {
         setNachname(scanner.nextLine());
         System.out.println("Geben sie ihre Email ein.");
         setEmail(scanner.nextLine());
-        setPasswort();
+        enterPasswort();
         System.out.println("----------- Erstellvorgang abgeschlossen ----------------");
     }
 
@@ -120,10 +120,18 @@ public class Benutzer {
     }
 
     /**
+     * Setter für das Passwort des Benutzers.
+     * @param passwort setzte das Passwort des Benutzers als String.
+     */
+    private void setPasswort(String passwort) {
+        this.passwort = passwort;
+    }
+
+    /**
      * Setzt das Passwort des Benutzers. Das Passwort muss zweimal richtig eingegeben werden.
      * Falls das Password nicht übereinstimmt, muss dies wiederholt werden.
      */
-    public void setPasswort() {
+    public void enterPasswort() {
         System.out.println("Bitte geben Sie ein Passwort ein für den Benutzer " + vorname + " " + nachname + ":");
         String passwort = scanner.nextLine();
         System.out.println("Bitte wiederholen Sie das Passwort:");
@@ -139,7 +147,7 @@ public class Benutzer {
         }
 
         System.out.println("Passwort erfolgreich gesetzt!");
-        this.passwort = passwort;
+        setPasswort(passwort);
     }
 
     /**
