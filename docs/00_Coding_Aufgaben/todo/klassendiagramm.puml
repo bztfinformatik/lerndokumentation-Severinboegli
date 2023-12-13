@@ -1,5 +1,13 @@
 @startuml
 
+Main : <img:java.png{scale=0.3}>
+
+class Main {
+    + {static} main(args[]) : void
+}
+
+
+
 class Benutzer {
     -- Attribute --
     - id : int
@@ -126,6 +134,8 @@ class Bild {
     + setBreite(int breite) : void
     + getBreite() : int
 }
+Main "1" <-- "1...n" Benutzer
+Main "1" <-- "1...n" SharedList
 Benutzer "1...4" <--> "0...2" SharedList
 SharedList "1" *-- "0...n" Aufgabe
 Aufgabe "1" *-- "1" Bild

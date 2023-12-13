@@ -228,7 +228,7 @@ public class SharedList {
      * Listet neben allen Eigenschaften der Liste, alle Aufgaben und Benutzer auf.
      */
     public void printOutSharedListFull() {
-        System.out.println("---------- SHARED LIST ----------");
+        System.out.println("\n---------- SHARED LIST ----------");
         System.out.println("ID: " + id);
         System.out.println("Name: " + name);
         System.out.println("Beschreibung: " + beschreibung);
@@ -242,7 +242,7 @@ public class SharedList {
      * Listet Eigenschaften und Benutzer auf.
      */
     public void printOutSharedListUsers() {
-        System.out.println("---------- SHARED LIST ----------");
+        System.out.println("\n---------- SHARED LIST ----------");
         System.out.println("ID: " + id);
         System.out.println("Name: " + name);
         System.out.println("Beschreibung: " + beschreibung);

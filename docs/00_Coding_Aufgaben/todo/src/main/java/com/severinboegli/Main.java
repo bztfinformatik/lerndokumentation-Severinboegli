@@ -55,11 +55,13 @@ public class Main {
         sharedListListe.get(1).addBenutzer(peter);
         sharedListListe.get(1).addAufgabe();
         sharedListListe.get(1).addAufgabe("Milch", "1 Liter", 1, Status.OPEN);
-        sharedListListe.get(1).addAufgabe("Brot", "1 Laib", 1, Status.OPEN);
         sharedListListe.get(1).addAufgabe("Butter", "1 Packung", 1, Status.OPEN);
+        sharedListListe.get(1).removeAufgabe(10006); // Butter sollte nicht mehr in der Liste angezeigt werden.
+        sharedListListe.get(1).printAllTasks(); // Es sollte nur Milch und eine leere Aufgabe beinhalten
+
+
         sharedListListe.get(1).addAufgabe("Käse", "1 Packung", 1, Status.OPEN, new Bild("D:\\Einkauf\\Spezieller Käse.jpg", 500, 200));
         sharedListListe.get(1).addAufgabe("Wurst", "1 Packung", 1, Status.OPEN);
-        sharedListListe.get(1).addAufgabe("Eier", "1 Packung", 1, Status.DONE);
         sharedListListe.get(1).addAufgabe("Mehl", "1 Packung", 1, Status.DONE);
 
         sharedListListe.get(9).setName("Wunschliste Familie Muster");
@@ -70,11 +72,11 @@ public class Main {
         sharedListListe.get(9).addAufgabe("Buch: Der Herr der Ringe", "Das Buch von J.R.R. Tolkien", 1, Status.ONGOING);
         sharedListListe.get(9).addAufgabe();
 
-        System.out.println("Solle zwei Tasks zeigen");
+        System.out.println("!Sollte zwei Tasks zeigen!");
         sharedListListe.get(9).printAllTasks();
         sharedListListe.get(9).removeAufgabe(10013);
 
-        System.out.println("Sollte nur noch einen Task zeigen");
+        System.out.println("!Sollte nur noch einen Task zeigen!");
         sharedListListe.get(9).printAllTasks();
 
         sharedListListe.get(9).addAufgabe("Playstation 5", "Die neue Playstation", 1, Status.DONE);
@@ -82,11 +84,11 @@ public class Main {
 
         /* -----------------------------------
         * Testbereich
-        * Nun werden alle Methoden der Klassen getestet.
+        * Nun werden weitere Methoden der Klassen getestet.
         * ------------------------------------
         */
 
-        // Methoden der Klasse Bild:
+        // Methoden der Klasse Bild: (Die Daten werden bewusst nicht in der Konsole ausgegeben, da dies nicht notwendig ist)
         Bild bild1 = new Bild("D:\\Bilder\\Bild1.jpg", 100, 100);
         Bild bild2 = new Bild("D:\\Bilder\\Bild2.jpg", 200, 200, "Bild 2");
         bild1.getBeschreibung();
@@ -96,6 +98,7 @@ public class Main {
         bild1.setBreite(200);
         bild1.setHoehe(200);
         bild1.setPfad("D:\\Bilder\\Bild2.jpg");
+
 
         // Methoden der KLasse Aufgabe:
         Aufgabe aufgabe1 = new Aufgabe();
@@ -113,8 +116,9 @@ public class Main {
 
 
         // Gibt alles SharedLists aus, alle Benutzer und alle Aufgaben dazu.
-        System.out.println("====================================================================");
+        System.out.println("\n\n====================================================================");
         System.out.println("Alle SharedLists:");
+        System.out.println("Nun werden noch alle Shared Lists angezeit.");
         System.out.println("====================================================================");
         for (SharedList sharedList : sharedListListe) {
             sharedList.printOutSharedListFull();
