@@ -57,8 +57,6 @@ public class SharedList {
 
     /**
      * Setter für die ID der SharedList.
-     * 
-     * @param id ID der SharedList als int.
      */
     private void setId() {
         this.id = listCounter;
