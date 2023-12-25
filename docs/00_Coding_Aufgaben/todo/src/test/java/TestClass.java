@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SharedListTest {
+public class TestClass {
 
     /**
      * Testet, ob ein Benutzer erstellt werden kann.
