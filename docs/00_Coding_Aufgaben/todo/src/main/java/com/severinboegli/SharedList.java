@@ -56,6 +56,22 @@ public class SharedList {
     }
 
     /**
+     * Getter für die Tasks
+     * @return gibt alle Tasks zurück
+     */
+    public HashMap<Integer, Aufgabe> getTasks() {
+        return tasks;
+    }
+
+    /**
+     * Getter für alle User
+     * @return gibt alle User, die Zugriff auf die Liste haben zurück.
+     */
+    public HashMap<Integer, Benutzer> getUsers() {
+        return users;
+    }
+
+    /**
      * Setter für die ID der SharedList.
      */
     private void setId() {
@@ -192,6 +208,10 @@ public class SharedList {
         users.get(id).unlinkSharedList(this.getId());
         users.remove(id);
 
+    }
+
+    public boolean hasUserAccess(int id) {
+        return users.containsKey(id);
     }
 
     /**

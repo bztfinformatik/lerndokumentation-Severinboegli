@@ -93,7 +93,6 @@ public class Aufgabe {
 
     /**
      * Setter für die ID
-     * @param id ID der Aufgabe als int.
      */
     private void setId() {
         this.id = taskCounter;

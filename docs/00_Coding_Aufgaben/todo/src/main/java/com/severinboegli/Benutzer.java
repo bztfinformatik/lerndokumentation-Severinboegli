@@ -55,7 +55,6 @@ public class Benutzer {
 
     /**
      * Setter für die ID des Benutzers.
-     * @param id setzte die ID des Benutzers als int.
      */
     private void setId() {
         this.id = userCounter;
@@ -108,7 +107,18 @@ public class Benutzer {
      * @param email setzte die Mailadresse des Benutzers als String.
      */
     public void setEmail(String email) {
-        this.email = email;
+        String regexPattern = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
+                + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
+        if (email.matches(regexPattern)){
+            this.email = email;
+        } else {
+            System.out.println("Email enspricht nicht der Richtlinie --> Email wurde leer gelassen.");
+            this.email = "";
+        }
+    }
+
+    public HashMap<Integer, SharedList> getSharedToDoLists() {
+        return sharedToDoLists;
     }
 
     /**
