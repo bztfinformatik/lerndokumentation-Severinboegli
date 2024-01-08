@@ -81,11 +81,7 @@ public class Aufgabe {
      * @param bild Bild der Aufgabe, die als Anhang hinzugefügt wird. Es ist ein Objekt der Klasse Bild.
      */
     public Aufgabe(String name, String beschreibung, int prioritaet, Status status, Bild bild) {
-        setId();
-        setName(name);
-        setBeschreibung(beschreibung);
-        setPrioritaet(prioritaet);
-        setStatus(status);
+        this(name, beschreibung,prioritaet,status);
         setBild(bild);
     }
 

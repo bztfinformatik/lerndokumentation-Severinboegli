@@ -30,7 +30,7 @@ public class Main {
         Benutzer peter = new Benutzer();
         Benutzer max = new Benutzer("Max", "Muster", "max.muster@outlook.de");
         Benutzer moritz = new Benutzer("Moritz", "Müller", "moritz.müller@gmail.com");
-        moritz.enterPasswort();
+        moritz.enterFirstPassword();
 
         // Erstellen von 10 Testlisten
         ArrayList<SharedList> sharedListListe = new ArrayList<SharedList>();
@@ -91,9 +91,9 @@ public class Main {
         // Methoden der Klasse Bild: (Die Daten werden bewusst nicht in der Konsole ausgegeben, da dies nicht notwendig ist)
         Bild bild1 = new Bild("D:\\Bilder\\Bild1.jpg", 100, 100);
         Bild bild2 = new Bild("D:\\Bilder\\Bild2.jpg", 200, 200, "Bild 2");
-        bild1.getBeschreibung();
-        bild1.getBreite();
-        bild1.getHoehe();
+        System.out.println("Bildbeschreibung: " + bild1.getBeschreibung());
+        System.out.println("Bildbreite: " + bild1.getBreite());
+        System.out.println("Bildhöhe: " + bild1.getHoehe());
         bild1.setBeschreibung("Bild 1");
         bild1.setBreite(200);
         bild1.setHoehe(200);
@@ -102,12 +102,13 @@ public class Main {
 
         // Methoden der KLasse Aufgabe:
         Aufgabe aufgabe1 = new Aufgabe();
-        aufgabe1.getId();
-        aufgabe1.getBild();
-        aufgabe1.getName();
-        aufgabe1.getBeschreibung();
-        aufgabe1.getPrioritaet();
-        aufgabe1.getStatus();
+        System.out.println("Aufgabeninformation");
+        System.out.println("ID: " + aufgabe1.getId());
+        System.out.println("Bild-Objekt: " + aufgabe1.getBild());
+        System.out.println("Aufgaben-Name: " + aufgabe1.getName());
+        System.out.println("Aufgaben-Beschreibung: " + aufgabe1.getBeschreibung());
+        System.out.println("Aufgaben-Priorität: " + aufgabe1.getPrioritaet());
+        System.out.println("Aufgaben-Status: " + aufgabe1.getStatus());
         aufgabe1.setBeschreibung("Aufgabe 1");
         aufgabe1.setBild(bild1);
         aufgabe1.setName("Aufgabe 1");

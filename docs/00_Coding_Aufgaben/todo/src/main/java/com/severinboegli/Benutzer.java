@@ -49,7 +49,7 @@ public class Benutzer {
         setNachname(scanner.nextLine());
         System.out.println("Geben sie ihre Email ein.");
         setEmail(scanner.nextLine());
-        enterPasswort();
+        enterFirstPassword();
         System.out.println("----------- Erstellvorgang abgeschlossen ----------------");
     }
 
@@ -138,10 +138,10 @@ public class Benutzer {
     }
 
     /**
-     * Setzt das Passwort des Benutzers. Das Passwort muss zweimal richtig eingegeben werden.
+     * Setzt das Passwort des Benutzers zur ersten Mal. Das Passwort muss zweimal richtig eingegeben werden.
      * Falls das Password nicht übereinstimmt, muss dies wiederholt werden.
      */
-    public void enterPasswort() {
+    public void enterFirstPassword() {
         System.out.println("Bitte geben Sie ein Passwort ein für den Benutzer " + vorname + " " + nachname + ":");
         String passwort = scanner.nextLine();
         System.out.println("Bitte wiederholen Sie das Passwort:");

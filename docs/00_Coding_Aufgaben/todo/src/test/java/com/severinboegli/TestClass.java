@@ -1,3 +1,5 @@
+package com.severinboegli;
+
 import com.severinboegli.Aufgabe;
 import com.severinboegli.Benutzer;
 import com.severinboegli.Bild;

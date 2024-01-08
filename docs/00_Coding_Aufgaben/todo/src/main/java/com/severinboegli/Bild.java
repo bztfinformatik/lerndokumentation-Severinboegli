@@ -32,9 +32,7 @@ public class Bild {
      * @param beschreibung setzt die Beschreibung des Bildes als String
      */
     public Bild(String pfad, int breite, int hoehe, String beschreibung) {
-        setPfad(pfad);
-        setBreite(breite);
-        setHoehe(hoehe);
+        this(pfad, breite, hoehe);
         setBeschreibung(beschreibung);
     }
 
